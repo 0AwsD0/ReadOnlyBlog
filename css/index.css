@@ -1,0 +1,46 @@
+.row > *{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.index-content{
+    background-color: rgb(240, 240, 240);
+    padding-top: 20px;
+}
+
+.btn-index{
+    font-size: 20px !important;
+    border: 0;
+    width: 100%;
+    background-color: rgb(175, 175, 175) !important;
+    color: rgb(65, 65, 65);
+    font-weight: bold;
+}
+
+.post{
+    background-color: rgb(212, 212, 212);
+    color: rgb(65, 65, 65);
+    min-width: 400px;
+    max-width: 400px !important;
+    margin: 20px;
+    font-weight: bold;
+}
+
+.post > h4{
+    color: rgb(65, 65, 65);
+    border-bottom: 5px solid rgb(175, 175, 175);
+    margin-top: 15px;
+    margin: 10px;
+}
+
+.post > p{
+    margin: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .post{
+        width: 100%;
+        margin: auto;
+        margin-bottom: 20px;;
+    }
+  }

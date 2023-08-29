@@ -1,0 +1,32 @@
+np nad content dodać opcjonalny blok tak jak ten asidei tam mozna reklame dac np miejece placeholder na grafioke wjebac
+i dac mozliwosc np zuploaded dac grafike albo zalinkowac przez panel który wstawi reklame
+
+
+//stworzyć skrypt instlaacji bazxy danych icalego systemu cms - install.php
+
+Linki w bazie danych z ikonkami i jeżeli active to git //loista nmajbardziej popoularnych mediow i ikonek w bazie ..//db row ": boolan active true false
+(kod ikonek jako txt z html icon link to np. fontawesome albo local)
+- lista - FB, Insta, LinkedIn, Youtube, Twitch, TikTok, Patreon, Cofee, Mail, Twitter (X), Snapchat, Gitvhub, Bitbucket,SourceForge, DevianArt, Pixiv
+//ikonki wszyskie jako jeden string w bazie danych txt string albo json? >>txt+display=block albo none jeżeli nie zaznaczone wkonfigu // do HTMLabez escape htmli tojako jedno zapytanie - footer odpytuje jeden wpis w bazieze
+stringiem któryjest zapisywany przez panel / panel zawierwazmienne ze wsysktim mozliwymi linkami i wysylaopcjonalny plik do inengo plimnku php który tworzy jeden string i wysyła go dobazy
+
+Add info abut captcha / apache htaccess login page itp. that it needs to be done separetly and is nmot done coz API and coz htaccess is in apache not ngix sop use resposibly! And use cliudflare too!
+
+Creating logs into database onlogins and login atemptstabels for logins and tables for certain actions to track back what heapend.
+
+/./
+Export database button.
+Import database button.
+//Backup database? list of backed up databases? // przyciski AJAXEM?
+
+.../// FOR LATER LATER - import from wordpres
+
+//  // db - 1 srodek 0 - lewa 2 - prawa option to edit H1left mid right and text etc / like in database addinginline things. +stupid user check for xss andSQLinjection on ctrl+c Ctrl+v
+
+//social media links on top? -footer + header albo podwujne poprostu ten sam kod i zapytanie po prostu php sprawda czy jest on na górze czy nie i wyświetla albo nie dodatkowo można weedy mieć tu i tu linki
+
+//zmiana kolorów stronyoiprócz css w PHP custom style albo nawet pickery dla głównych elementów strony zkaskadowością tj. PHP sprawdza czy zosały dodane zmianione style i zwyczejnie je ładuje z bazy albo pliku cfg albo pliku css i go includuje na stronie
+
+//in social - mozna nie dawać linku tylko nazwe i np sami nie chc se wpisuyja XD //database - allow nulls w link
+
+type_subpage - in db to od 0czyli main strona do3 np - 1 = kontakt, 2 =infromacje prawne polityka prywatności, 3 = pusta strona// + wyjasnienie w edytorze jak ktoś kumaty ze mozna dodawać sobie podstrony
