@@ -19,11 +19,9 @@
         </header>
         <div class="container">
             <div class="row no-gutters index-content justify-content-md-center">
-
             <?php
-                require('functions/show_articles.php');
+                require('functions/show_posts.php');
             ?>
-
             </div>
         </div>
         <footer>

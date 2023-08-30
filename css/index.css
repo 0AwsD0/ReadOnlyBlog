@@ -31,6 +31,8 @@
     border-bottom: 5px solid rgb(175, 175, 175);
     margin-top: 15px;
     margin: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .post > p{

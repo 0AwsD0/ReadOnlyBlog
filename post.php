@@ -19,15 +19,7 @@
         <div class="row content justify-content-md-center">
             <div class="col-xxl-6 content-text"><!--- bez asiade this 6 na 8 zmiana w php albo gneeralnie możliwość edycji bez aside i z od 4 do 12 -4 jeżeli asiade jest --->
     	        <!--- Txt content From Databese --->
-                <h1>This is H1</h1>
-                <h2>This is H2</h2>
-                <h3>This is H3</h3>
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam voluptatibus, modi ad neque blanditiis deleniti a architecto. Provident velit quis vitae omnis obcaecati saepe in similique voluptates, neque error aliquam.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat rerum ea ad ratione maxime officia, autem sequi fuga qui dicta dolorum amet quae ipsam quod temporibus dolor vitae excepturi modi.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat rerum ea ad ratione maxime officia, autem sequi fuga qui dicta dolorum amet quae ipsam quod temporibus dolor vitae excepturi modi.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat rerum ea ad ratione maxime officia, autem sequi fuga qui dicta dolorum amet quae ipsam quod temporibus dolor vitae excepturi modi.
-                </p>
+                <?php require('functions/post.php') ?>
             </div>
 
                     <?php
