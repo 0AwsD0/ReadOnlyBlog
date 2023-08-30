@@ -21,12 +21,10 @@
     	        <!--- Txt content From Databese --->
                 <?php require('functions/post.php') ?>
             </div>
-
-                    <?php
-                    //tutj IF asiade is activated in config file edited by admin panel than display if
-                        require('elements/aside.php');
-                    ?>
-
+            <?php
+                //tutj IF asiade is activated in config file edited by admin panel than display if
+                require('elements/aside.php');
+            ?>
         </div>
         <footer>
             <?php

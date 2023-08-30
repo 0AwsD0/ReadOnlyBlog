@@ -2,9 +2,10 @@
     require('dbconn.php');
 
     $post_id =$_GET['post_id'];
-    echo('post id: '.$post_id);
+    //echo('post id: '.$post_id);
 
-    $sql = 'SELECT rob_post_content.content_post_content, rob_post_content.data_type_post_content, rob_post.id_post, rob_post_content.order_post_content FROM rob_post,rob_post_content WHERE rob_post.id_post = '.$post_id.' ORDER BY rob_post_content.order_post_content ASC';
+try{
+    $sql = 'SELECT rob_post_content.content_post_content, rob_post_content.data_type_post_content, rob_post_content.id_post, rob_post_content.order_post_content FROM rob_post_content WHERE rob_post_content.id_post = '.$post_id.' ORDER BY rob_post_content.order_post_content ASC';
 
     $result = $conn->query($sql);
 
@@ -29,6 +30,13 @@
                 break;
         }
     }
+    $conn = null;
+}
+catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+    $conn = null;
+}
+
 
 
 

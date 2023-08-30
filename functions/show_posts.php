@@ -22,9 +22,10 @@ try{
                     </div>'
                 );
         }
+        $conn = null;
 }
 catch(PDOException $e) {
   echo "Error: " . $e->getMessage();
+  $conn = null;
 }
-$conn = null;
 ?>
