@@ -7,6 +7,6 @@
 </head>
 <body>
     <h1>Login Failed! Try Again.</h1><br>
-    <button class="btn btn-primary">Back to login page</button>
+   <a href="admin_login.php"><button class="btn btn-primary">Back to login page</button></a>
 </body>
 </html>

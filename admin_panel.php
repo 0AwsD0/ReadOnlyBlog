@@ -49,10 +49,10 @@
                             <a class="nav-link" href="#">Edit Posts</a>
                         </li>
                     </ul>
+                    <a class="nav-link" href="functions/logout.php"><button class="btn btn-danger log_out">Logout</button></a>
                 </nav>
-                <a class="nav-link" href="functions/logout.php"><button class="btn btn-primary log_out">Logout</button></a>
 
-                <main>
+                <main class="main">
                     <?php require('functions/admin_panel_main.php'); ?>
                 </main>
 
