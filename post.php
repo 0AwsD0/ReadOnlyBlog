@@ -1,3 +1,7 @@
+<?php
+    require('functions/dbconn.php');
+    require('functions/get_settings_for_post.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +33,7 @@
         <footer>
             <?php
                 require('elements/footer.php');
+                $conn = null;
             ?>
         </footer>
     </div>

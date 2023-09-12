@@ -1,6 +1,5 @@
 <?php
     require('dbconn.php');
-
     try{
         $sql = "SELECT * FROM rob_settings"; //id_setings header_position_settings header_image_settings active_settings blog_name_settings active_footer_social_settings active_aside_settings
         foreach ($conn->query($sql) as $row){
@@ -36,5 +35,4 @@
       echo "Error: " . $e->getMessage();
       $conn = null;
     }
-
 ?>

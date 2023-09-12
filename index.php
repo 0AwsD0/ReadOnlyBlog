@@ -1,9 +1,17 @@
+<?php
+    require('functions/dbconn.php');
+    require('functions/get_settings_for_index.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP blog name here</title>
+    <title>
+        <?php
+            echo($blog_name_settings);
+        ?>
+    </title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
@@ -27,6 +35,7 @@
         <footer>
             <?php
                 require('elements/footer.php');
+                $conn = null;
             ?>
         </footer>
     </div>

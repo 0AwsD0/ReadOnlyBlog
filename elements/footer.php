@@ -10,6 +10,6 @@ Linki w bazie danych z ikonkami i jeżeli active to git //loista nmajbardziej po
 </div>
 <div class="row footer justify-content-md-center">
             <div class="col-auto">
-                    &copyCopyright and stuff + Link to opensourcegitchub link for this website codedbase.
+                    &copy <?php echo(date("Y")); ?> | Powered by: <a href="https://github.com/0AwsD0/ReadOnlyBlog" target="_blank" style="text-decoration: none;">Read Only Blog</a>
             </div>
 </div>

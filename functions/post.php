@@ -1,6 +1,4 @@
 <?php
-    require('dbconn.php');
-
     $post_id =$_GET['post_id'];
     //echo('post id: '.$post_id);
 
@@ -40,7 +38,6 @@ try{
                 break;
         }
     }
-    $conn = null;
 }
 catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
