@@ -54,15 +54,14 @@
 
                 <main class="main">
                     <?php require('functions/admin_panel_main.php'); ?>
+                    <form action="functions/add_settings_set.php" method="post" style="padding: 20px; border-top: 1px solid #dee2e6;">
+                        <button type="submit" class="btn btn-primary">Add settings set</button>
+                    </form>
                 </main>
 
             </div>
         </div>
     </div>
-
-<footer>
-
-</footer>
 
 </body>
 </html>

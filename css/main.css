@@ -56,7 +56,7 @@ p{
     text-align: center;
 }
 
-.footer-socialmedia{
+.footer_links{
     background-color: rgb(212, 212, 212);
     padding: 20px;
     font-size: 25px;
@@ -72,7 +72,7 @@ p{
         padding: 10px;
         font-weight: bold;
     }
-    .footer-socialmedia{
+    .footer_footer{
         padding: 20px;
         font-size: 20px;
     }

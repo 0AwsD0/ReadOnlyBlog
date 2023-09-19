@@ -1,4 +1,4 @@
-<div class="row footer-socialmedia justify-content-md-center">
+<div class="row footer_links justify-content-md-center">
             <div class="col-auto">
                    Links and icons to csocial media gnerated by php db?.
 <!--
