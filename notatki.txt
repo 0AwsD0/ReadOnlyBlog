@@ -36,3 +36,7 @@ type_subpage - in db to od 0czyli main strona do3 np - 1 = kontakt, 2 =infromacj
 for custom link just linkim // + costom icon link/ path on server
 
 //change DB and all form social links just to links on footer //fuck socials
+
+ADD 100vh 100vw z indexed BG like body zeby było jako HEADER i zer masz aamiast paSEKHEADER TO TŁO STRONY I JEST EFEKT SCROLLING IPO PROSTU ROW MA TYLE PXODSTEPU CO BY BYL HEADER
+
++!!!!!!!!!!!!!!!!!!! najważneijsze! LINKOWANIE BOOTSTRAPA LOKALNIE! no js AND CROSS SITE DOWNLOADING ITP bloatware AND SUPLY CHAIN ATTACK !

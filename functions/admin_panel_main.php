@@ -12,7 +12,7 @@
               $active_aside_settings = $row['active_aside_settings'];
               require('get_settings_set_for_admin_panel.php');
             }
-            $conn = null;
+      $conn = null;
     }
     catch(PDOException $e) {
       echo "Error: " . $e->getMessage();
