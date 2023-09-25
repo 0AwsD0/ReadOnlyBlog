@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 25 Wrz 2023, 03:28
+-- Czas generowania: 26 Wrz 2023, 00:04
 -- Wersja serwera: 10.4.19-MariaDB
 -- Wersja PHP: 7.3.28
 
@@ -122,22 +122,25 @@ INSERT INTO `rob_post_content` (`id_post_content`, `id_post`, `order_post_conten
 
 CREATE TABLE `rob_settings` (
   `id_setings` int(11) NOT NULL,
-  `header_text_color_settings` text COLLATE utf8_unicode_ci NOT NULL DEFAULT 'black',
-  `header_position_settings` text COLLATE utf8_unicode_ci NOT NULL DEFAULT 'center',
-  `header_image_settings` text COLLATE utf8_unicode_ci NOT NULL DEFAULT 'cover',
+  `header_text_color_settings` tinytext COLLATE utf8_unicode_ci NOT NULL DEFAULT '\'black\'',
+  `header_position_settings` tinytext COLLATE utf8_unicode_ci NOT NULL DEFAULT '\'center\'',
+  `header_image_uri_settings` text COLLATE utf8_unicode_ci NOT NULL DEFAULT '\'img/header.jpg\'\'',
+  `header_image_settings` tinytext COLLATE utf8_unicode_ci NOT NULL DEFAULT '\'cover\'',
   `active_settings` tinyint(1) NOT NULL DEFAULT 0,
   `blog_name_settings` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Read Only Blog',
   `active_footer_settings` tinyint(1) NOT NULL DEFAULT 0,
-  `active_aside_settings` tinyint(1) NOT NULL DEFAULT 0
+  `active_aside_settings` tinyint(1) NOT NULL DEFAULT 0,
+  `css_settings` tinytext COLLATE utf8_unicode_ci NOT NULL DEFAULT 'old_grey_',
+  `admin_panel_css_settings` tinytext COLLATE utf8_unicode_ci NOT NULL DEFAULT 'white_'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `rob_settings`
 --
 
-INSERT INTO `rob_settings` (`id_setings`, `header_text_color_settings`, `header_position_settings`, `header_image_settings`, `active_settings`, `blog_name_settings`, `active_footer_settings`, `active_aside_settings`) VALUES
-(1, 'black', 'center', 'cover', 1, 'Read Only Blog Default', 1, 1),
-(2, 'black', 'center', 'cover', 0, 'Set 2', 0, 0);
+INSERT INTO `rob_settings` (`id_setings`, `header_text_color_settings`, `header_position_settings`, `header_image_uri_settings`, `header_image_settings`, `active_settings`, `blog_name_settings`, `active_footer_settings`, `active_aside_settings`, `css_settings`, `admin_panel_css_settings`) VALUES
+(1, 'black', 'center', 'img/header.jpg', 'cover', 1, 'Read Only Blog Default', 1, 1, 'old_grey_', 'white_'),
+(2, 'black', 'center', 'img/header.jpg', 'cover', 0, 'Set 2', 0, 0, 'old_grey_', 'white_');
 
 -- --------------------------------------------------------
 
