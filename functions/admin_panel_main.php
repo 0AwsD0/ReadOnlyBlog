@@ -5,6 +5,7 @@
         foreach ($conn->query($sql) as $row){
               $id_setings = $row['id_setings'];
               $header_position_settings = $row['header_position_settings'];
+              $header_image_uri_settings = $row['header_image_uri_settings'];
               $header_image_settings = $row['header_image_settings'];
               $active_settings = $row['active_settings'];
               $blog_name_settings = $row['blog_name_settings'];

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 22 Wrz 2023, 03:22
+-- Czas generowania: 25 Wrz 2023, 03:28
 -- Wersja serwera: 10.4.19-MariaDB
 -- Wersja PHP: 7.3.28
 
@@ -40,21 +40,21 @@ CREATE TABLE `rob_aside` (
 
 CREATE TABLE `rob_footer` (
   `id_footer` int(11) NOT NULL,
-  `id_settings` int(11) NOT NULL,
-  `name_footer` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `link_footer` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `image_footer` text COLLATE utf8_unicode_ci NOT NULL
+  `is_enabled_footer` tinyint(1) NOT NULL DEFAULT 1,
+  `name_footer` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'LINK',
+  `link_footer` text COLLATE utf8_unicode_ci DEFAULT '#',
+  `image_footer` text COLLATE utf8_unicode_ci NOT NULL DEFAULT 'img/ico/link.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `rob_footer`
 --
 
-INSERT INTO `rob_footer` (`id_footer`, `id_settings`, `name_footer`, `link_footer`, `image_footer`) VALUES
+INSERT INTO `rob_footer` (`id_footer`, `is_enabled_footer`, `name_footer`, `link_footer`, `image_footer`) VALUES
 (1, 1, 'Github', 'https://github.com/0AwsD0', 'img/ico/link.png'),
 (5, 1, 'Bitbucket', '#', 'img/ico/link.png'),
 (6, 1, 'SourceForge', '#', 'img/ico/link.png'),
-(7, 1, 'YouTube', '#', 'img/ico/link.png');
+(7, 0, 'YouTube', '#', 'img/ico/link.png');
 
 -- --------------------------------------------------------
 
@@ -77,8 +77,8 @@ CREATE TABLE `rob_log` (
 CREATE TABLE `rob_post` (
   `id_post` int(11) NOT NULL,
   `visibility_post` tinyint(1) NOT NULL DEFAULT 1,
-  `title_post` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `introduction_post` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `title_post` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'TITLE',
+  `introduction_post` text COLLATE utf8_unicode_ci DEFAULT 'introduction',
   `creation_date_post` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -123,10 +123,10 @@ INSERT INTO `rob_post_content` (`id_post_content`, `id_post`, `order_post_conten
 CREATE TABLE `rob_settings` (
   `id_setings` int(11) NOT NULL,
   `header_text_color_settings` text COLLATE utf8_unicode_ci NOT NULL DEFAULT 'black',
-  `header_position_settings` text COLLATE utf8_unicode_ci NOT NULL DEFAULT '1',
-  `header_image_settings` text COLLATE utf8_unicode_ci NOT NULL,
+  `header_position_settings` text COLLATE utf8_unicode_ci NOT NULL DEFAULT 'center',
+  `header_image_settings` text COLLATE utf8_unicode_ci NOT NULL DEFAULT 'cover',
   `active_settings` tinyint(1) NOT NULL DEFAULT 0,
-  `blog_name_settings` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `blog_name_settings` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Read Only Blog',
   `active_footer_settings` tinyint(1) NOT NULL DEFAULT 0,
   `active_aside_settings` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -137,7 +137,7 @@ CREATE TABLE `rob_settings` (
 
 INSERT INTO `rob_settings` (`id_setings`, `header_text_color_settings`, `header_position_settings`, `header_image_settings`, `active_settings`, `blog_name_settings`, `active_footer_settings`, `active_aside_settings`) VALUES
 (1, 'black', 'center', 'cover', 1, 'Read Only Blog Default', 1, 1),
-(2, 'black', 'center', 'cover', 0, 'Set 2', 1, 1);
+(2, 'black', 'center', 'cover', 0, 'Set 2', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -187,8 +187,7 @@ ALTER TABLE `rob_aside`
 --
 ALTER TABLE `rob_footer`
   ADD PRIMARY KEY (`id_footer`) USING BTREE,
-  ADD UNIQUE KEY `id_footer` (`id_footer`),
-  ADD KEY `rob_footer_fk0` (`id_settings`);
+  ADD UNIQUE KEY `id_footer` (`id_footer`);
 
 --
 -- Indeksy dla tabeli `rob_log`
@@ -289,12 +288,6 @@ ALTER TABLE `rob_user`
 --
 -- Ograniczenia dla zrzutów tabel
 --
-
---
--- Ograniczenia dla tabeli `rob_footer`
---
-ALTER TABLE `rob_footer`
-  ADD CONSTRAINT `rob_footer_fk0` FOREIGN KEY (`id_settings`) REFERENCES `rob_settings` (`id_setings`);
 
 --
 -- Ograniczenia dla tabeli `rob_post_content`
