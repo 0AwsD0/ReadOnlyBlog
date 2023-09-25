@@ -13,6 +13,19 @@
     else{
         //echo('Session is present!');
     }
+
+    require('functions/dbconn.php');
+    try{
+        $sql = "SELECT admin_panel_css_settings FROM rob_settings WHERE active_settings = 1"; //+add in database new table containnig links icons etc. or ad columns to settings table and get them as varibles here to be used inside get_settings_set_for_admin_panel.php
+        foreach ($conn->query($sql) as $row){
+            $admin_panel_css_settings = $row['admin_panel_css_settings'];
+        }
+    }
+    catch(PDOException $e) {
+      echo "Error: " . $e->getMessage();
+      $conn = null;
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +35,7 @@
     <title>ROB Admin Panel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/admin_panel.css">
+    <link rel="stylesheet" href=<?php echo("css/".$admin_panel_css_settings."admin_panel.css"); ?>>
 </head>
 <body>
 

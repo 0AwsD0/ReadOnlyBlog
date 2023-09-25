@@ -10,6 +10,13 @@
     <input type="checkbox" name="active_settings" class="active_settings" <?php if($active_settings == 1){echo('checked');} ?>>
     <label for="active_settings">Set this setting as active. (If more than one settings set is set this way, the first one in database will be chosen.)</label>
 
+    <h4>Active admin panell css prefix: <?php echo($admin_panel_css_settings); ?></h4>
+    <input type="text" name="admin_panel_css_settings" value="<?php echo($admin_panel_css_settings); ?>">
+    <label for="admin_panel_css_settings"> - change css for your admin panel</label>
+    <h4>Active website css prefix: <?php echo($css_settings); ?></h4>
+    <input type="text" name="css_settings" value="<?php echo($css_settings); ?>">
+    <label for="css_settings"> - change css for your website</label>
+
     <h4>Name of the website: </h4><input type="text" name="blog_name_settings" class="blog_name_settings" value="<?php echo($blog_name_settings); ?>" >
     <label for="blog_name_settings"> - Change name of the website</label>
 

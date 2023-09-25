@@ -8,13 +8,21 @@
     padding-top: 20px;
 }
 
-.btn-index{
+.btn_index{
     font-size: 20px !important;
     border: 0;
     width: 100%;
     background-color: rgb(175, 175, 175) !important;
     color: rgb(65, 65, 65);
     font-weight: bold;
+}
+
+.btn_index:hover{
+    color: rgb(69, 69, 69) !important;
+}
+
+.btn_index:active{
+    color: rgb(55, 55, 55) !important;
 }
 
 .post{

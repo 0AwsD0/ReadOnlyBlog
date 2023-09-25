@@ -16,7 +16,7 @@ try{
                     '</p>
                         <form ethod="get" action="post">
                             <input type="hidden" name="post_id" value="'.$row['id_post'].'">
-                            <button class="btn-index" type="submit">Read</button>
+                            <button class="btn_index" type="submit">Read</button>
                         </form>
                     </div>
                     </div>'

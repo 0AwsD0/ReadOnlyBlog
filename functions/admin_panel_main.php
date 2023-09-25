@@ -1,9 +1,9 @@
 <?php
-    require('dbconn.php');
     try{
         $sql = "SELECT * FROM rob_settings"; //+add in database new table containnig links icons etc. or ad columns to settings table and get them as varibles here to be used inside get_settings_set_for_admin_panel.php
         foreach ($conn->query($sql) as $row){
               $id_setings = $row['id_setings'];
+              $css_settings = $row['css_settings'];
               $header_position_settings = $row['header_position_settings'];
               $header_image_uri_settings = $row['header_image_uri_settings'];
               $header_image_settings = $row['header_image_settings'];
