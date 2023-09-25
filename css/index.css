@@ -20,7 +20,6 @@
 .post{
     background-color: rgb(212, 212, 212);
     color: rgb(65, 65, 65);
-    min-width: 400px;
     max-width: 400px !important;
     margin: 20px;
     font-weight: bold;
