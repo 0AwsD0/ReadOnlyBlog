@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 26 Wrz 2023, 00:04
+-- Czas generowania: 30 Wrz 2023, 02:14
 -- Wersja serwera: 10.4.19-MariaDB
 -- Wersja PHP: 7.3.28
 
@@ -51,7 +51,7 @@ CREATE TABLE `rob_footer` (
 --
 
 INSERT INTO `rob_footer` (`id_footer`, `is_enabled_footer`, `name_footer`, `link_footer`, `image_footer`) VALUES
-(1, 1, 'Github', 'https://github.com/0AwsD0', 'img/ico/link.png'),
+(1, 1, 'Github', 'https://github.com/0AwsD0', 'img/ico/github.png'),
 (5, 1, 'Bitbucket', '#', 'img/ico/link.png'),
 (6, 1, 'SourceForge', '#', 'img/ico/link.png'),
 (7, 0, 'YouTube', '#', 'img/ico/link.png');
@@ -112,7 +112,9 @@ CREATE TABLE `rob_post_content` (
 --
 
 INSERT INTO `rob_post_content` (`id_post_content`, `id_post`, `order_post_content`, `data_type_post_content`, `content_post_content`) VALUES
-(1, 1, 1, 1, 'To jest tekst w bazie danych oznaczony typem danych jako \"1\". \'1\' oznacza H1.');
+(1, 1, 1, 1, 'To jest tekst w bazie danych oznaczony typem danych jako \"1\". \'1\' oznacza H1.'),
+(2, 2, 1, 1, 'This is post 2'),
+(3, 3, 1, 1, 'This is post 3');
 
 -- --------------------------------------------------------
 
@@ -140,7 +142,7 @@ CREATE TABLE `rob_settings` (
 
 INSERT INTO `rob_settings` (`id_setings`, `header_text_color_settings`, `header_position_settings`, `header_image_uri_settings`, `header_image_settings`, `active_settings`, `blog_name_settings`, `active_footer_settings`, `active_aside_settings`, `css_settings`, `admin_panel_css_settings`) VALUES
 (1, 'black', 'center', 'img/header.jpg', 'cover', 1, 'Read Only Blog Default', 1, 1, 'old_grey_', 'white_'),
-(2, 'black', 'center', 'img/header.jpg', 'cover', 0, 'Set 2', 0, 0, 'old_grey_', 'white_');
+(2, 'black', 'center', 'img/header.jpg', 'cover', 0, 'Read Only Blog Set 2', 0, 0, 'old_grey_', 'white_');
 
 -- --------------------------------------------------------
 
@@ -268,7 +270,7 @@ ALTER TABLE `rob_post`
 -- AUTO_INCREMENT dla tabeli `rob_post_content`
 --
 ALTER TABLE `rob_post_content`
-  MODIFY `id_post_content` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_post_content` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `rob_settings`
