@@ -2,6 +2,11 @@
     session_start();
     $csrf_token = bin2hex(random_bytes(20));
     $_SESSION['csrf_token'] = $csrf_token;
+
+    if(isset($_SESSION['logged_in']) && isset($_SESSION['csrf_token'])){
+        header('Location: admin_panel.php');
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

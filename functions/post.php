@@ -38,6 +38,33 @@ try{
                 break;
         }
     }
+
+    $amount_of_posts = 0;
+    $sql ="SELECT id_post FROM rob_post";
+    foreach ($conn->query($sql) as $row){
+        $amount_of_posts++;
+    }
+    echo($amount_of_posts);
+
+    if($post_id < $amount_of_posts){
+        echo('
+        <form ethod="get" action="post">
+            <input type="hidden" name="post_id" value="'.($post_id+1).'">
+            <button id="next_post">Next Post</button>
+        </form>
+        ');
+    }
+    if($post_id != 1){
+        echo('
+        <form ethod="get" action="post">
+            <input type="hidden" name="post_id" value="'.($post_id-1).'">
+            <button id="previous_post">Previous Post</button>
+        </form>
+        ');
+    }
+
+
+
 }
 catch(PDOException $e) {
     echo "Error: " . $e->getMessage();

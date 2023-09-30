@@ -8,7 +8,7 @@
 
     <h4>Is settings set active?: <?php if($active_settings == 1){echo("Yes");}else{echo("No");}; ?></h4>
     <input type="checkbox" name="active_settings" class="active_settings" <?php if($active_settings == 1){echo('checked');} ?>>
-    <label for="active_settings">Set this setting as active. (If more than one settings set is set this way, the first one in database will be chosen.)</label>
+    <label for="active_settings">Set this setting as active. (If more than one settings set is set this way, the last one in database will be chosen)</label>
 
     <h4>Active admin panell css prefix: <?php echo($admin_panel_css_settings); ?></h4>
     <input type="text" name="admin_panel_css_settings" value="<?php echo($admin_panel_css_settings); ?>">
@@ -142,5 +142,4 @@ $conn = null;
       ');
     }
     ?>
-  <h5>TO ADD - CUSTOM CSS FOR SETTINGS SET - for example you can set diferent styles seasons - winter summer</h5>
 </div>

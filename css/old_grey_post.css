@@ -2,3 +2,21 @@
     width: auto;
     height: auto;
 }
+
+#previous_post,#next_post{
+    margin: 5%;
+    border: solid 5px #D4D4D4;
+}
+
+#previous_post{
+    float: left;
+}
+
+#next_post{
+    float: right;
+}
+
+#previous_post:hover,#next_post:hover{
+    border-color: #acacac;
+    color: grey;
+}

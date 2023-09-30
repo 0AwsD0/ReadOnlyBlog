@@ -63,7 +63,10 @@ p{
 }
 
 .footer_link_image{
-    height: 20px;
+    height: 25px;
+    display: block;
+    float: left;
+    margin: 3px;
 }
 
 .footer_link_text{

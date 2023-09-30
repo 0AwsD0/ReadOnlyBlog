@@ -53,13 +53,19 @@
                 <nav>
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Panel</a>
+                            <a class="nav-link active" aria-current="page" href="#">Settings</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Add Post</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Edit Posts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Enable/Disable Pages</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Don't remember one more XD</a>
                         </li>
                     </ul>
                     <a class="nav-link" href="functions/logout.php"><button class="btn btn-danger log_out">Logout</button></a>
@@ -78,3 +84,6 @@
 
 </body>
 </html>
+<?php
+$conn = null;
+?>

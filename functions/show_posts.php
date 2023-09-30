@@ -1,7 +1,7 @@
 <?php
 require('dbconn.php');
 try{
-    $sql = "SELECT id_post,title_post,introduction_post,creation_date_post FROM rob_post WHERE visibility_post = 1";
+    $sql = "SELECT id_post,title_post,introduction_post,creation_date_post FROM rob_post WHERE visibility_post = 1 ORDER BY id_post DESC";
     foreach ($conn->query($sql) as $row){
             echo(
                 '<div class="col-md-auto">
@@ -22,7 +22,6 @@ try{
                     </div>'
                 );
         }
-        $conn = null;
 }
 catch(PDOException $e) {
   echo "Error: " . $e->getMessage();
