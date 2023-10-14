@@ -42,7 +42,7 @@
     <header>
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-12 header"><h1>Welcome in Admin Panel!</h1></div>
+                <div class="col-12 header"><h1>Edit Post</h1></div>
             </div>
         </div>
     </header>
@@ -53,13 +53,13 @@
                 <nav>
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="admin_panel.php">Settings</a>
+                            <a class="nav-link" href="admin_panel.php">Settings</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="add_post.php">Add Post</a><!-- Creates post taht is not visible and redirects to Editor (same as edit post redirects after selecting post to edit) post with ID of new post. -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="edit_post">Edit Posts</a>
+                            <a class="nav-link active" aria-current="page" href="#">Edit Posts</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="pages.php">Pages</a>
@@ -69,10 +69,9 @@
                 </nav>
 
                 <main class="main">
-                    <?php require('functions/admin_panel_main.php'); ?>
-                    <form action="functions/add_settings_set.php" method="post" style="padding: 20px; border-top: 1px solid #dee2e6;">
-                        <button type="submit" class="btn btn-primary">Add settings set</button>
-                    </form>
+                    <?php require('functions/list_posts.php'); ?>
+                    <!-- Content Here -->
+                    <!-- List of posts and button edit - rows like in database slick and horizontal lines - post ID post Title and Edit button as row (80% screen?) --->
                 </main>
 
             </div>

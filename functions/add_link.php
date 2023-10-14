@@ -14,4 +14,11 @@
      //echo('Session is present!');
  }
 
+    require('dbconn.php');
+
+    $sql = "INSERT INTO `rob_footer` (`id_footer`, `is_enabled_footer`, `name_footer`, `link_footer`, `image_footer`) VALUES (NULL, '1', 'LINK', '#', 'img/ico/link.png')";
+    $conn -> query($sql);
+
+    $conn = null;
+    header('Location: ../admin_panel.php');
 ?>

@@ -14,4 +14,13 @@
      //echo('Session is present!');
  }
 
+    require('dbconn.php');
+
+    $id_footer = $_POST['id_footer'];
+    $sql = "DELETE FROM rob_footer WHERE id_footer = $id_footer";
+    $query= $conn->prepare($sql);
+    $query -> execute();
+
+    $conn = null;
+    header('Location: ../admin_panel.php');
 ?>

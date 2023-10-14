@@ -14,4 +14,23 @@
      //echo('Session is present!');
  }
 
+    require('dbconn.php');
+
+    $id_footer = $_POST['id_footer'];
+    $name_footer = $_POST['name_footer'];
+    $link_footer = $_POST['link_footer'];
+    $image_footer = $_POST['image_footer'];
+        if(!isset($_POST['is_enabled_footer'])){
+            $is_enabled_footer = 0;
+        }
+        else{
+            $is_enabled_footer = 1;
+        }
+
+    $sql = "UPDATE `rob_footer` SET `is_enabled_footer` = $is_enabled_footer, `name_footer` = '$name_footer', `link_footer` = '$link_footer', `image_footer` = '$image_footer' WHERE `id_footer` = $id_footer";
+    $query= $conn->prepare($sql);
+    $query -> execute();
+
+    $conn = null;
+    //header('Location: ../admin_panel.php');
 ?>

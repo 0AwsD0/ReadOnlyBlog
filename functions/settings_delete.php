@@ -14,4 +14,14 @@
      //echo('Session is present!');
  }
 
+    require('dbconn.php');
+
+    $id_settings = $_POST['id_settings'];
+
+    $sql = "DELETE FROM `rob_settings` WHERE id_settings = $id_settings";
+    $query= $conn->prepare($sql);
+    $query -> execute();
+
+    $conn = null;
+    header('Location: ../admin_panel.php');
 ?>

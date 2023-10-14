@@ -123,7 +123,7 @@ INSERT INTO `rob_post_content` (`id_post_content`, `id_post`, `order_post_conten
 --
 
 CREATE TABLE `rob_settings` (
-  `id_setings` int(11) NOT NULL,
+  `id_settings` int(11) NOT NULL,
   `header_text_color_settings` tinytext COLLATE utf8_unicode_ci NOT NULL DEFAULT '\'black\'',
   `header_position_settings` tinytext COLLATE utf8_unicode_ci NOT NULL DEFAULT '\'center\'',
   `header_image_uri_settings` text COLLATE utf8_unicode_ci NOT NULL DEFAULT '\'img/header.jpg\'\'',
@@ -140,7 +140,7 @@ CREATE TABLE `rob_settings` (
 -- Zrzut danych tabeli `rob_settings`
 --
 
-INSERT INTO `rob_settings` (`id_setings`, `header_text_color_settings`, `header_position_settings`, `header_image_uri_settings`, `header_image_settings`, `active_settings`, `blog_name_settings`, `active_footer_settings`, `active_aside_settings`, `css_settings`, `admin_panel_css_settings`) VALUES
+INSERT INTO `rob_settings` (`id_settings`, `header_text_color_settings`, `header_position_settings`, `header_image_uri_settings`, `header_image_settings`, `active_settings`, `blog_name_settings`, `active_footer_settings`, `active_aside_settings`, `css_settings`, `admin_panel_css_settings`) VALUES
 (1, 'black', 'center', 'img/header.jpg', 'cover', 1, 'Read Only Blog Default', 1, 1, 'old_grey_', 'white_'),
 (2, 'black', 'center', 'img/header.jpg', 'cover', 0, 'Read Only Blog Set 2', 0, 0, 'old_grey_', 'white_');
 
@@ -220,8 +220,8 @@ ALTER TABLE `rob_post_content`
 -- Indeksy dla tabeli `rob_settings`
 --
 ALTER TABLE `rob_settings`
-  ADD PRIMARY KEY (`id_setings`),
-  ADD UNIQUE KEY `id_setings` (`id_setings`);
+  ADD PRIMARY KEY (`id_settings`),
+  ADD UNIQUE KEY `id_settings` (`id_settings`);
 
 --
 -- Indeksy dla tabeli `rob_subpage`
@@ -276,7 +276,7 @@ ALTER TABLE `rob_post_content`
 -- AUTO_INCREMENT dla tabeli `rob_settings`
 --
 ALTER TABLE `rob_settings`
-  MODIFY `id_setings` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_settings` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `rob_subpage`
@@ -304,7 +304,7 @@ ALTER TABLE `rob_post_content`
 -- Ograniczenia dla tabeli `rob_subpage`
 --
 ALTER TABLE `rob_subpage`
-  ADD CONSTRAINT `rob_subpage_fk0` FOREIGN KEY (`id_settings`) REFERENCES `rob_settings` (`id_setings`);
+  ADD CONSTRAINT `rob_subpage_fk0` FOREIGN KEY (`id_settings`) REFERENCES `rob_settings` (`id_settings`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

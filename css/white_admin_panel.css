@@ -29,3 +29,22 @@ form > h4{
     padding-top: 10px;
     margin-top: 10px;
 }
+
+.list_holder{
+    width: 100%;
+    padding: 20px;
+}
+
+.list{
+    float: left;
+    font-weight: bold;
+    background-color:#ffc107;
+    color: white;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: .25rem;
+}
+
+.list_title{
+    font-size: 20px;
+}

@@ -26,12 +26,10 @@
             ?>
         </header>
         <div class="row content justify-content-md-center">
-            <div class="col-xxl-6 content-text"><!--- bez asiade this 6 na 8 zmiana w php albo gneeralnie możliwość edycji bez aside i z od 4 do 12 -4 jeżeli asiade jest --->
-    	        <!--- Txt content From Databese --->
+            <div class="col-xxl-6 content-text">
                 <?php require('functions/post.php') ?>
             </div>
             <?php
-                //tutj IF asiade is activated in config file edited by admin panel than display if
                 if($active_aside_settings == 1){
                     require('elements/aside.php');
                 }

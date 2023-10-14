@@ -42,7 +42,7 @@
     <header>
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-12 header"><h1>Welcome in Admin Panel!</h1></div>
+                <div class="col-12 header"><h1>Editor</h1></div>
             </div>
         </div>
     </header>
@@ -50,29 +50,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12">
-                <nav>
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="admin_panel.php">Settings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="add_post.php">Add Post</a><!-- Creates post taht is not visible and redirects to Editor (same as edit post redirects after selecting post to edit) post with ID of new post. -->
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="edit_post">Edit Posts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="pages.php">Pages</a>
-                        </li>
-                    </ul>
-                    <a class="nav-link" href="functions/logout.php"><button class="btn btn-danger log_out">Logout</button></a>
-                </nav>
-
                 <main class="main">
-                    <?php require('functions/admin_panel_main.php'); ?>
-                    <form action="functions/add_settings_set.php" method="post" style="padding: 20px; border-top: 1px solid #dee2e6;">
-                        <button type="submit" class="btn btn-primary">Add settings set</button>
-                    </form>
+                    <button>ADMIN PANEL</button>
+                    <button>BACK TO POST LIST</button>
+                    <!-- Content Here -->
+                    <!-- 2 buttons at the top BACK(to the post list) and ADMIN PANEL -->
                 </main>
 
             </div>

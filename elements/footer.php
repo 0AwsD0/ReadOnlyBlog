@@ -8,7 +8,7 @@
                                 $image_footer = $row['image_footer'];
                                 echo('
                                 <div class="col-auto">
-                                <a href="'.$link_footer.'" target="_blank" class="footer_link_text"><img src="'.$image_footer.'" alt="[Link] " class="footer_link_image"> '.$name_footer.'</a>
+                                <a href="'.$link_footer.'" target="_blank" class="footer_link_text"><img src="'.$image_footer.'" alt="[Link] " class="footer_link_image"> '.$name_footer.'&nbsp;&nbsp;</a>
                                 </div>
                                 ');
                         }
