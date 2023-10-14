@@ -6,7 +6,7 @@
                 $title_post = $row['title_post'];
                 echo('
                     <div class="list_holder">
-                        <div class="list">ID:'.$id_post.'</div><div class="list_title">TITLE: '.$title_post.'&nbsp;&nbsp;<button class="btn btn-primary list_btn">Edit</button></div>
+                        <div class="list">ID:'.$id_post.'</div><div class="list_title">TITLE: '.$title_post.'&nbsp;&nbsp;<form action="editor.php" method="GET"><input type="hidden" name="id_post" value="'.$id_post.'"><button class="btn btn-primary list_btn">Edit</button></form></div>
                     </div>
                 ');
             }

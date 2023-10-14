@@ -48,3 +48,7 @@ form > h4{
 .list_title{
     font-size: 20px;
 }
+
+form{
+    display: inline-block;
+}

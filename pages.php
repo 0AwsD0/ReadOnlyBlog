@@ -72,7 +72,6 @@
                     <!-- Content Here -->
                     <!-- list of pages ++_ Edit Button // same editor as post itp show post - for ID --->
                 </main>
-
             </div>
         </div>
     </div>

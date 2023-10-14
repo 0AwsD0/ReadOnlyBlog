@@ -53,7 +53,9 @@
                 <main class="main">
                     <button>ADMIN PANEL</button>
                     <button>BACK TO POST LIST</button>
-                    <!-- Content Here -->
+                    <!-- Link to Editor PHP file in Functions -->
+                    <!-- OR some logic here if necessary -->
+                    <!-- OR wireite logic here and move most of it into functions to make somewhat MVC  -->
                     <!-- 2 buttons at the top BACK(to the post list) and ADMIN PANEL -->
                 </main>
 
