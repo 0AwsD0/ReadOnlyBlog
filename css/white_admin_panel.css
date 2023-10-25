@@ -50,5 +50,26 @@ form > h4{
 }
 
 form{
+    width: 100%;
+}
+
+#p_help{
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    width: 40%;
+    border-top: 0;
+    border-left: 0;
+}
+
+.resizable-input {
+    /* make resizable */
+    overflow-x: hidden;
+    resize: horizontal;
     display: inline-block;
+}
+
+.edit_wrap{
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #dee2e6;
 }

@@ -1,3 +1,4 @@
+
 <?php
     $post_id =$_GET['post_id'];
     //echo('post id: '.$post_id);
@@ -44,7 +45,6 @@ try{
     foreach ($conn->query($sql) as $row){
         $amount_of_posts++;
     }
-    echo($amount_of_posts);
 
     if($post_id < $amount_of_posts){
         echo('
@@ -70,16 +70,5 @@ catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
     $conn = null;
 }
-
-
-
-
-
-
-
-    //type 0 - text //type 1 - H1 // type 2 - h2 // type 3 - h3 // type 4 - h4 //type 5 - h5 //type 6 - h6 //type 7 - link //type 8 - image = SWITCH CASE
-
-
-
 
 ?>
