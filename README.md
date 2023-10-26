@@ -5,7 +5,7 @@ I wanted to create fast and very simple CMS for read only purposes. It is made s
 
 # Why 2 versions?
 
-As JavaScript creator said: ~"It has so many congenital defects it really us a smelly language." - https://youtu.be/lc5Np9OqDHU?t=21 | if the video goes down by some reason - tell me I will reupload :) |
+As JavaScript creator said: ~"It has so many congenital defects it really is a smelly language." - https://youtu.be/lc5Np9OqDHU?t=21 | if the video goes down by some reason - tell me I will reupload :) |
 Everyone knows jokes about quirks and different inconsistencies in the language. Tho's I treat unnecessary JavaScript as bloat.(in fact I treat whole JavaScript as bloat in some instances) Additionaly I don't think that every webpage and solution needs to sugarcoat the user and use eye candy and AJAX to not reload page. So the base version of the web system I'm trying to produce will be free of any JavaScript written by me. I will make fork/version that does use AJAX and other fancy things, but I recommend using simpler version. In the end booth will achieve the same goal, and the JS'Less version will be faster and safer. It allows you to disable JavaScript in browser and still have 100% functionality of the website.
 
 # This readme is subjected to change

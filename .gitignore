@@ -26,3 +26,4 @@
 ## git ignore shortcut folder
 *.lnk
 ignore/
+.gitignore
