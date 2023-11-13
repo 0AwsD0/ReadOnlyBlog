@@ -26,4 +26,12 @@
       $conn = null;
     }
 //SQL adding newpost - disabled visibility + redirect to deitor woth new post ID
-?>
+    $sql = "INSERT INTO `rob_post`(`id_post`, `visibility_post`, `title_post`, `introduction_post`, `creation_date_post`) VALUES (NULL,0,'Title','Introduction',NULL)"; //+add in database new table containnig links icons etc. or ad columns to settings table and get them as varibles here to be used inside get_settings_set_for_admin_panel.php
+    $conn->query($sql);
+
+    $_POST['redirected'] = true;
+    header('Location: editor.php?redirected=1');
+    exit();
+
+
+    ?>
