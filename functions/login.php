@@ -8,6 +8,7 @@
     $email = $_POST['email'];
     $passwd = $_POST['password'];
     require('dbconn.php');
+    require('../logs/log.php');
 
 try{
 
@@ -19,11 +20,13 @@ try{
 
     if(password_verify($email, $obtained_password) && password_verify($passwd, $obtained_email))
     {
+        add_into_log('login', 'Login SUCCESS | '.date('m/d/Y h:i:s a', time()).' | IP '.$_SERVER['REMOTE_ADDR']);
         header('Location: ../admin_panel.php');
         session_start();
         $_SESSION['logged_in'] = true;
     }
     else{
+        add_into_log('login', 'Login FAILED | '.date('m/d/Y h:i:s a', time()).' | IP '.$_SERVER['REMOTE_ADDR']);
         header('Location: ../login_failed.php');
     }
 

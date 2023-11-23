@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+RedirectMatch 403 functions/dbconn.php$
+RedirectMatch 403 functions/admin_panel_main.php$
+RedirectMatch 403 functions/get_settings_for_post.php$
+RedirectMatch 403 functions/get_settings_set_for_admin_panel.php$
+RedirectMatch 403 functions/list_posts.php$
+RedirectMatch 403 functions/post.php$
+RedirectMatch 403 functions/show_posts.php$

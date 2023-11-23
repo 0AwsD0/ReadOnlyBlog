@@ -51,7 +51,7 @@ try{
 
     if($post_id < $amount_of_posts){
         echo('
-        <form ethod="get" action="post">
+        <form ethod="get" action="post.php">
             <input type="hidden" name="post_id" value="'.($post_id+1).'">
             <button id="next_post">Next Post</button>
         </form>
@@ -59,7 +59,7 @@ try{
     }
     if($post_id != 1){
         echo('
-        <form ethod="get" action="post">
+        <form ethod="get" action="post.php">
             <input type="hidden" name="post_id" value="'.($post_id-1).'">
             <button id="previous_post">Previous Post</button>
         </form>

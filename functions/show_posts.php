@@ -14,7 +14,7 @@ try{
                     '</p><p>'
                     .$row['creation_date_post'].
                     '</p>
-                        <form ethod="get" action="post">
+                        <form ethod="get" action="post.php">
                             <input type="hidden" name="post_id" value="'.$row['id_post'].'">
                             <button class="btn_index" type="submit">Read</button>
                         </form>
