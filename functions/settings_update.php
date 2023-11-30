@@ -15,6 +15,7 @@
  }
 
     require('dbconn.php');
+    require('../logs/log.php');
 
     $id_settings = $_POST['id_settings'];
     $header_text_color_settings = $_POST['header_text_color_settings'];
@@ -54,5 +55,8 @@ echo('  DEBUG:  '.$header_image_uri_settings);
     $query -> execute();
 
     $conn = null;
+
+    add_into_log('admin', 'Settings updated');
+
     header('Location: ../admin_panel.php');
 ?>

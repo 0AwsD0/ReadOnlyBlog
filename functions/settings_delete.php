@@ -15,6 +15,7 @@
  }
 
     require('dbconn.php');
+    require('../logs/log.php');
 
     $id_settings = $_POST['id_settings'];
 
@@ -23,5 +24,8 @@
     $query -> execute();
 
     $conn = null;
+
+    add_into_log('admin', 'Settings DELETED');
+
     header('Location: ../admin_panel.php');
 ?>

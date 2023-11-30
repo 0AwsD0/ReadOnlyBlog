@@ -15,6 +15,7 @@
  }
 
     require('dbconn.php');
+    require('../logs/log.php');
 
     $id_footer = $_POST['id_footer'];
     $sql = "DELETE FROM rob_footer WHERE id_footer = $id_footer";
@@ -22,5 +23,8 @@
     $query -> execute();
 
     $conn = null;
+
+    add_into_log('admin', 'Link deleted');
+
     header('Location: ../admin_panel.php');
 ?>

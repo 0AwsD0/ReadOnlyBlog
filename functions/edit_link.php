@@ -15,6 +15,7 @@
  }
 
     require('dbconn.php');
+    require('../logs/log.php');
 
     $id_footer = $_POST['id_footer'];
     $name_footer = $_POST['name_footer'];
@@ -32,5 +33,7 @@
     $query -> execute();
 
     $conn = null;
-    //header('Location: ../admin_panel.php');
+
+    add_into_log('admin', 'Link edited');
+    header('Location: ../admin_panel.php');
 ?>
