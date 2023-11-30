@@ -5,7 +5,7 @@
     //
     //the below code can be replaced with better solution in the future -> possibly JSON to evade multiple records for one post in database
     //
-
+require('../logs/log.php');
 try{
     $sql = 'SELECT rob_post_content.content_post_content, rob_post_content.data_type_post_content, rob_post_content.id_post, rob_post_content.order_post_content FROM rob_post_content WHERE rob_post_content.id_post = '.$post_id.' ORDER BY rob_post_content.order_post_content ASC';
 
@@ -69,8 +69,9 @@ try{
 
 
 }
-catch(PDOException $e) {
+catch(Exception $e) {
     echo "Error: " . $e->getMessage();
+    add_into_log('error', 'Post.php ERROR - '.$e->getMessage());
     $conn = null;
 }
 

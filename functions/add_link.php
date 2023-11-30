@@ -17,12 +17,17 @@
     require('dbconn.php');
     require('../logs/log.php');
 
+try{
     $sql = "INSERT INTO `rob_footer` (`id_footer`, `is_enabled_footer`, `name_footer`, `link_footer`, `image_footer`) VALUES (NULL, '1', 'LINK', '#', 'img/ico/link.png')";
     $conn -> query($sql);
-
     $conn = null;
-
     add_into_log('admin', 'Link added');
+}
+catch(Exception $e) {
+    echo "Error: " . $e->getMessage();
+    add_into_log('error', 'Editor ERROR - '.$e->getMessage());
+    $conn = null;
+}
 
     header('Location: ../admin_panel.php');
 ?>

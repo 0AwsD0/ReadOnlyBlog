@@ -27,13 +27,18 @@
         else{
             $is_enabled_footer = 1;
         }
-
+try{
     $sql = "UPDATE `rob_footer` SET `is_enabled_footer` = $is_enabled_footer, `name_footer` = '$name_footer', `link_footer` = '$link_footer', `image_footer` = '$image_footer' WHERE `id_footer` = $id_footer";
     $query= $conn->prepare($sql);
     $query -> execute();
-
     $conn = null;
-
     add_into_log('admin', 'Link edited');
+}
+catch(Exception $e){
+    echo ("Error: " . $e->getMessage());
+    add_into_log('error', 'Link edition ERROR - '.$e->getMessage());
+    $conn = null;
+}
+
     header('Location: ../admin_panel.php');
 ?>

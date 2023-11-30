@@ -14,16 +14,23 @@
      //echo('Session is present!');
  }
 
+
     require('dbconn.php');
     require('../logs/log.php');
 
+try{
     $id_footer = $_POST['id_footer'];
     $sql = "DELETE FROM rob_footer WHERE id_footer = $id_footer";
     $query= $conn->prepare($sql);
     $query -> execute();
 
     $conn = null;
-
+}
+catch(Exception $e) {
+    echo ("Error: " . $e->getMessage());
+    add_into_log('error', 'Link deletion ERROR - '.$e->getMessage());
+    $conn = null;
+}
     add_into_log('admin', 'Link deleted');
 
     header('Location: ../admin_panel.php');

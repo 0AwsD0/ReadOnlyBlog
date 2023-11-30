@@ -19,12 +19,18 @@
 
     $id_settings = $_POST['id_settings'];
 
+try{
     $sql = "DELETE FROM `rob_settings` WHERE id_settings = $id_settings";
     $query= $conn->prepare($sql);
     $query -> execute();
 
     $conn = null;
-
+}
+catch(Exception $e) {
+    echo "Error: " . $e->getMessage();
+    add_into_log('error', 'Settings delete ERROR - '.$e->getMessage());
+    $conn = null;
+}
     add_into_log('admin', 'Settings DELETED');
 
     header('Location: ../admin_panel.php');

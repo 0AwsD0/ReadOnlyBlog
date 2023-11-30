@@ -1,5 +1,6 @@
 <?php
 require('dbconn.php');
+require('../logs/log.php');
 try{
     $sql = "SELECT id_post,title_post,introduction_post,creation_date_post FROM rob_post WHERE visibility_post = 1 ORDER BY id_post DESC";
     foreach ($conn->query($sql) as $row){
@@ -23,8 +24,9 @@ try{
                 );
         }
 }
-catch(PDOException $e) {
+catch(Exception $e) {
   echo "Error: " . $e->getMessage();
+  add_into_log('error', 'Show posts ERROR - '.$e->getMessage());
   $conn = null;
 }
 ?>

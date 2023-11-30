@@ -5,6 +5,8 @@
         exit('<h1> 405 Method Not Allowed </h1>');
     }
 
+require('../logs/log.php');
+
     $email = $_POST['email'];
     $passwd = $_POST['password'];
     require('dbconn.php');
@@ -35,8 +37,9 @@ try{
     $conn = null;
 
 }
-catch(PDOException $e) {
+catch(Exception $e) {
     echo "Error: " . $e->getMessage();
+    add_into_log('error', 'Login ERROR - '.$e->getMessage());
     $conn = null;
 }
 

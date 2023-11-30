@@ -68,6 +68,8 @@
 
                         $i = 0; //for proper labeling of data - the method can change and the below code can be replaced with better solution in the future -> possibly JSON to evade multiple records for one post
 
+                        require('logs/log.php');
+
                         try{
 
                         if(!isset($_GET['redirected'])  || $_GET['redirected'] != 1){
@@ -291,8 +293,9 @@
                             echo('<p style="font-weight: bold !important; text-decoration: underline;">You created post. Now you have to add content into it. </p>');
                         }
                     }
-                        catch(PDOException $e) {
+                        catch(Exception $e) {
                         echo "Error: " . $e->getMessage();
+                        add_into_log('error', 'Editor ERROR - '.$e->getMessage());
                         $conn = null;
                         }
 

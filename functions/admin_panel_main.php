@@ -1,4 +1,5 @@
 <?php
+require('../logs/log.php');
     try{
         $sql = "SELECT * FROM rob_settings"; //+add in database new table containnig links icons etc. or ad columns to settings table and get them as varibles here to be used inside get_settings_set_for_admin_panel.php
         foreach ($conn->query($sql) as $row){
@@ -16,8 +17,10 @@
             }
       $conn = null;
     }
-    catch(PDOException $e) {
+  catch(Exception $e) {
       echo "Error: " . $e->getMessage();
+      add_into_log('error', 'Admin panel main ERROR - '.$e->getMessage());
       $conn = null;
-    }
+  }
+      $conn = null;
 ?>
