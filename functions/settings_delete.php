@@ -15,7 +15,7 @@
  }
 
     require('dbconn.php');
-    require('../logs/log.php');
+    require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
 
     $id_settings = $_POST['id_settings'];
 

@@ -5,12 +5,12 @@
         exit('<h1> 405 Method Not Allowed </h1>');
     }
 
-require('../logs/log.php');
+    require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
 
     $email = $_POST['email'];
     $passwd = $_POST['password'];
     require('dbconn.php');
-    require('../logs/log.php');
+
 
 try{
 
@@ -28,7 +28,7 @@ try{
         $_SESSION['logged_in'] = true;
     }
     else{
-        add_into_log('login', 'Login failed');
+        add_into_log('login', 'Login FAILED | '.' | IP '.$_SERVER['REMOTE_ADDR']);
         header('Location: ../login_failed.php');
     }
 

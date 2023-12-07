@@ -1,6 +1,6 @@
 <?php
 require('dbconn.php');
-require('../logs/log.php');
+require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
 try{
     $sql = "SELECT id_post,title_post,introduction_post,creation_date_post FROM rob_post WHERE visibility_post = 1 ORDER BY id_post DESC";
     foreach ($conn->query($sql) as $row){

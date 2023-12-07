@@ -83,7 +83,6 @@
     <h6>This settings are global - no matter witch settings set you use links stay the same.<br> You can disable or enable link by using designated checkbox.</h6>
     <br>
 <?php
-require('../logs/log.php');
  try{
   $sql = "SELECT * FROM rob_footer"; //+add in database new table containnig links icons etc. or ad columns to settings table and get them as varibles here to be used inside get_settings_set_for_admin_panel.php
   foreach ($conn->query($sql) as $row){

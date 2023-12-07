@@ -1,6 +1,6 @@
 <?php
-    require('functions/dbconn.php');
-    require('functions/get_settings_for_index.php');
+    require ('functions/dbconn.php');
+    require ('functions/get_settings_for_index.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

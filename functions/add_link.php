@@ -15,7 +15,9 @@
  }
 
     require('dbconn.php');
-    require('../logs/log.php');
+    //require('../logs/log.php'); <- this stopped working by no reason on windows XAMPP so I had to change it line below
+    require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
+
 
 try{
     $sql = "INSERT INTO `rob_footer` (`id_footer`, `is_enabled_footer`, `name_footer`, `link_footer`, `image_footer`) VALUES (NULL, '1', 'LINK', '#', 'img/ico/link.png')";
