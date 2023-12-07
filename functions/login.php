@@ -22,13 +22,13 @@ try{
 
     if(password_verify($email, $obtained_password) && password_verify($passwd, $obtained_email))
     {
-        add_into_log('login', 'Login SUCCESS | '.' | IP '.$_SERVER['REMOTE_ADDR']);
+        add_into_log('login', 'Login SUCCESS');
         header('Location: ../admin_panel.php');
         session_start();
         $_SESSION['logged_in'] = true;
     }
     else{
-        add_into_log('login', 'Login FAILED | '.' | IP '.$_SERVER['REMOTE_ADDR']);
+        add_into_log('login', 'Login FAILED');
         header('Location: ../login_failed.php');
     }
 
