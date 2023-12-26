@@ -15,7 +15,8 @@
  }
 
     require('dbconn.php');
-    require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
+    //require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
+    require('../logs/log.php');
 
     $id_settings = $_POST['id_settings'];
     $header_text_color_settings = $_POST['header_text_color_settings'];

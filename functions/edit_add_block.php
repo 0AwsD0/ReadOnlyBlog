@@ -1,0 +1,1 @@
+//recive post ID and new block type

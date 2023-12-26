@@ -16,7 +16,8 @@
 
 
     require('dbconn.php');
-    require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
+    //require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
+    require('../logs/log.php');
 
 try{
     $id_footer = $_POST['id_footer'];

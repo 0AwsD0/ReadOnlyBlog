@@ -11,7 +11,7 @@ function add_into_log($log_type, $log_string){
             file_put_contents(__DIR__.'/login.log', date('m/d/Y h:i:s a', time()).' | '.$log_string.' | IP - '.$_SERVER['REMOTE_ADDR']."\n", FILE_APPEND);
             break;
         default:
-            file_put_contents(__DIR__.'/login.log', '!DEFAULT case | '.date('m/d/Y h:i:s a', time()).' | '.$log_string.' | IP - '.$_SERVER['REMOTE_ADDR']."\n", FILE_APPEND);
+            file_put_contents(__DIR__.'/log.log', '!DEFAULT case | '.date('m/d/Y h:i:s a', time()).' | '.$log_string.' | IP - '.$_SERVER['REMOTE_ADDR']."\n", FILE_APPEND);
             break;
     }
 }

@@ -5,13 +5,23 @@
     //
     //the below code can be replaced with better solution in the future -> possibly JSON to evade multiple records for one post in database
     //
-    require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
+    //require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
+    require('logs/log.php');
 try{
-    $sql = 'SELECT rob_post_content.content_post_content, rob_post_content.data_type_post_content, rob_post_content.id_post, rob_post_content.order_post_content FROM rob_post_content WHERE rob_post_content.id_post = '.$post_id.' ORDER BY rob_post_content.order_post_content ASC';
+    //INNER JOIN and WHERE part 2 is present not only to show title but also to prevent direct access tohidden posts
+    $sql = 'SELECT rob_post_content.content_post_content, rob_post_content.data_type_post_content, rob_post_content.id_post, rob_post_content.order_post_content, rob_post.visibility_post, rob_post.title_post FROM rob_post_content INNER JOIN `rob_post` ON rob_post.id_post = rob_post_content.id_post WHERE rob_post_content.id_post = '.$post_id.' AND rob_post.visibility_post = "1" ORDER BY rob_post_content.order_post_content ASC;';
 
     //$result = $conn->query($sql);
 
+
     foreach ($conn->query($sql) as $row){
+
+        $title = 0;
+
+        if($title == 0){
+            echo('<div id="title">'.$row['title_post'].'</div>');
+        }
+
         switch($row['data_type_post_content']){
             case 0:
                     echo('<p>'.$row['content_post_content'].'</p>');
@@ -41,10 +51,19 @@ try{
                     echo('<img class="post_image" src="'.$row['content_post_content'].'">');
                 break;
         }
+
+        $title++;
+
+    }
+
+    //returns true if somone is trying to directly access unwisible post or the post do not contains anything.
+    if( !array_key_exists('visibility_post', $row)){
+        echo('<h1>404 - PAGE NOT FOUND... <i>or the post is empty</i></h1>');
+        echo('<a href="index.php"><h3>Return to the main page</h3></a>');
     }
 
     $amount_of_posts = 0;
-    $sql ="SELECT id_post FROM rob_post";
+    $sql ="SELECT id_post FROM rob_post WHERE visibility_post = 1";
     foreach ($conn->query($sql) as $row){
         $amount_of_posts++;
     }

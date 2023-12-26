@@ -16,7 +16,7 @@
 
     require('dbconn.php');
     //require('../logs/log.php'); <- this stopped working by no reason on windows XAMPP so I had to change it line below
-    require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
+    require('../logs/log.php'); //works again?
 
 
 try{

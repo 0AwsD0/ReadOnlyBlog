@@ -16,7 +16,7 @@
 
     require('functions/dbconn.php');
     try{
-        $sql = "SELECT admin_panel_css_settings FROM rob_settings WHERE active_settings = 1"; //+add in database new table containnig links icons etc. or ad columns to settings table and get them as varibles here to be used inside get_settings_set_for_admin_panel.php
+        $sql = "SELECT admin_panel_css_settings FROM rob_settings WHERE active_settings = 1";
         foreach ($conn->query($sql) as $row){
             $admin_panel_css_settings = $row['admin_panel_css_settings'];
         }
@@ -42,41 +42,37 @@
     <header>
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-12 header"><h1>Pages</h1></div>
+                <div class="col-12 header"><h1>Documentation</h1></div>
             </div>
         </div>
     </header>
 
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12">
                 <nav>
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
-                            <a class="nav-link" href="admin_panel.php">Settings</a>
+                            <a class="nav-link" aria-current="page" href="admin_panel.php">Admin panel</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="add_post.php">Add Post</a><!-- Creates post taht is not visible and redirects to Editor (same as edit post redirects after selecting post to edit) post with ID of new post. -->
+                            <a class="nav-link" href="add_post.php">Add Post</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="edit_post.php">Edit Posts</a>
+                            <a class="nav-link" href="edit_post">Edit Posts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="pages.php">Pages</a>
+                            <a class="nav-link" href="pages.php">Pages</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="documentation.php">Documentation</a>
+                            <a class="nav-link active" aria-current="page" href="documentation.php">Documentation</a>
                         </li>
                     </ul>
                     <a class="nav-link" href="functions/logout.php"><button class="btn btn-danger log_out">Logout</button></a>
                 </nav>
-
-                <main class="main">
-                    <!-- Content Here -->
-                    <!-- list of pages ++_ Edit Button // same editor as post itp show post - for ID --->
-                </main>
+        <main class="main">
+            <div class="row justify-content-center" style="margin: 0 !important; display: block !important;">
+                214234234
             </div>
-        </div>
+        </main>
     </div>
 
 </body>

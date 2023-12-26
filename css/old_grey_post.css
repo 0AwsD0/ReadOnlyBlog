@@ -20,3 +20,12 @@
     border-color: #acacac;
     color: grey;
 }
+
+#title::before{
+    content:"TITLE: ";
+}
+
+#title{
+    font-weight: bolder;
+    font-size: 2.5rem;
+}

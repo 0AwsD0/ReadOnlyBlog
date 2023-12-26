@@ -82,8 +82,8 @@
                                 $introduction_post = $row['introduction_post'];
                             }
                             echo('
-                                <p style="margin: 20px; margin-left: 0;">Post Title: <input type="text" name="title_post_'.$i.'" style="width:" value="'.$row['title_post'].'"></p>
-                                <p style="margin: 15px; margin-left: 0;">Post Introduction: <input type="text" name="introduction_post_'.$i.'" style="width:" value="'.$row['introduction_post'].'"></p>
+                                <p style="margin: 20px; margin-left: 0;">Post Title: <input type="text" name="title_post" style="width:" value="'.$row['title_post'].'"></p>
+                                <p style="margin: 15px; margin-left: 0;">Post Introduction: <input type="text" name="introduction_post" style="width:" value="'.$row['introduction_post'].'"></p>
                                 ');
                                 //add Delete post above?
 
@@ -301,6 +301,7 @@
 
                     ?>
                         <input type="submit" value="Save" class="btn btn-primary" style="margin: 20px;">
+                        add checkbox "Delete block" - and if value 1 -> the block of that ID needs to be deleted -logic in edit.php
                      </form>
 
                     <form action="edit_add_block.php" method="post">
@@ -325,6 +326,7 @@
                         <input type="number" name="number_to_delete" id="XDddddd">
                         <input type="submit" value="Delete Block" class="btn btn-danger" style="margin: 20px;">
                     </form>
+                    <i>This is additional method for deleting elements of your post.</i>
 
                 </div>
             </div>

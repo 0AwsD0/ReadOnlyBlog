@@ -64,6 +64,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="pages.php">Pages</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="documentation.php">Documentation</a>
+                        </li>
                     </ul>
                     <a class="nav-link" href="functions/logout.php"><button class="btn btn-danger log_out">Logout</button></a>
                 </nav>

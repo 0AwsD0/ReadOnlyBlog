@@ -5,7 +5,8 @@
         exit('<h1> 405 Method Not Allowed </h1>');
     }
 
-    require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
+    //require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
+    require('../logs/log.php');
 
     $email = $_POST['email'];
     $passwd = $_POST['password'];
