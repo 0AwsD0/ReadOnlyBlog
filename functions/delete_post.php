@@ -15,15 +15,16 @@
     //require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
     require('../logs/log.php');
 
-    if(!($_SESSION['csrf_token_settings']) || $_SESSION['csrf_token_settings'] != $_POST['csrf_token_settings'] )
+
+    if(!($_SESSION['csrf_token_edit_post']) || $_SESSION['csrf_token_edit_post'] != $_GET['csrf_token_edit_post'] )
     {
-       add_into_log('error', 'CSRF ERROR - delete_link.php');
-       exit('<h1>CSRF TOKEN ERROR</h1>');
+    add_into_log('error', 'CSRF ERROR - delete_post.php');
+    exit('<h1>CSRF TOKEN ERROR</h1>');
     }
 
 try{
-    $id_footer = $_POST['id_footer'];
-    $sql = "DELETE FROM rob_footer WHERE id_footer = $id_footer";
+    $id_post = $_GET['id_post'];
+    $sql = "DELETE FROM rob_post WHERE id_post = $id_post";
     $query= $conn->prepare($sql);
     $query -> execute();
 
@@ -31,10 +32,9 @@ try{
 }
 catch(Exception $e) {
     echo ("Error: " . $e->getMessage());
-    add_into_log('error', 'Link deletion ERROR - '.$e->getMessage());
+    add_into_log('error', 'Post deletion ERROR - '.$e->getMessage());
     $conn = null;
 }
-    add_into_log('admin', 'Link deleted');
-
-    header('Location: ../admin_panel.php');
+    add_into_log('admin', 'Post ID = '.$id_post.' deleted');
+    header('Location: ../edit_post.php');
 ?>

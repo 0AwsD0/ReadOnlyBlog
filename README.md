@@ -1,4 +1,4 @@
-# Right now It's all work in progress. 
+# Right now It's all work in progress.
 # ReadOnlyBlog
 
 I wanted to create fast and very simple CMS for read only purposes. It is made so I can get rid of wordpress for my "Projects" subdomain that is holding posts containing some text images and links. The website is just showcase of my projects and some thoughts. I don't need users or comments and any of fancy features of wordpress, that I stripped of anyway. I don't want to use overcomplicated edited by me striped down solution for this basic needs. That's why I want to create easy website that let's it's user create posts containing images and other important stuff. I want to create solution from the ground including insulation script. I do not use anything already made aside from Bootstrap for frontend. I opted out of using JavaScript for now, and there will be 2 version of the project. One of them (that I'm going to use) will not contain ANY ADDITIONAL JavaScript other than that provided by Bootstrap.  I want it to be simple and I'm using "KISS" principal.

@@ -5,18 +5,20 @@
      exit('<h1> 405 Method Not Allowed </h1>');
  }
 
- //echo('Admin panel.');
  if(!($_SESSION['logged_in'] == true)){
      echo('<h1>You are not loged in!</h1><br>');
      exit('<h1>Log in first to access tis page!</h1>');
- }
- else{
-     //echo('Session is present!');
  }
 
     require('dbconn.php');
     //require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
     require('../logs/log.php');
+
+    if(!($_SESSION['csrf_token_settings']) || $_SESSION['csrf_token_settings'] != $_POST['csrf_token_settings'] )
+    {
+       add_into_log('error', 'CSRF ERROR - settings_delete.php');
+       exit('<h1>CSRF TOKEN ERROR</h1>');
+    }
 
     $id_settings = $_POST['id_settings'];
 

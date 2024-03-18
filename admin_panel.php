@@ -5,13 +5,9 @@
         exit('<h1> 405 Method Not Allowed </h1>');
     }
 
-    //echo('Admin panel.');
     if(!($_SESSION['logged_in'] == true)){
         echo('<h1>You are not loged in!</h1><br>');
         exit('<h1>Log in first to access tis page!</h1>');
-    }
-    else{
-        //echo('Session is present!');
     }
 
     require('functions/dbconn.php');
@@ -25,6 +21,9 @@
       echo "Error: " . $e->getMessage();
       $conn = null;
     }
+
+    $csrf_token_settings = bin2hex(random_bytes(20));
+    $_SESSION['csrf_token_settings'] = $csrf_token_settings;
 
 ?>
 <!DOCTYPE html>
@@ -59,7 +58,7 @@
                             <a class="nav-link" href="add_post.php">Add Post</a><!-- Creates post taht is not visible and redirects to Editor (same as edit post redirects after selecting post to edit) post with ID of new post. -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="edit_post">Edit Posts</a>
+                            <a class="nav-link" href="edit_post.php">Edit Posts</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="pages.php">Pages</a>
@@ -74,6 +73,7 @@
                 <main class="main">
                     <?php require('functions/admin_panel_main.php'); ?>
                     <form action="functions/add_settings_set.php" method="post" style="padding: 20px; border-top: 1px solid #dee2e6;">
+                        <input type="hidden" name="csrf_token_settings" value="<?php $csrf_token_settings ?>">
                         <button type="submit" class="btn btn-primary">Add settings set</button>
                     </form>
                 </main>

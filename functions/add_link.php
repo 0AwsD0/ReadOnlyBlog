@@ -5,19 +5,20 @@
      exit('<h1> 405 Method Not Allowed </h1>');
  }
 
- //echo('Admin panel.');
  if(!($_SESSION['logged_in'] == true)){
      echo('<h1>You are not loged in!</h1><br>');
      exit('<h1>Log in first to access tis page!</h1>');
- }
- else{
-     //echo('Session is present!');
  }
 
     require('dbconn.php');
     //require('../logs/log.php'); <- this stopped working by no reason on windows XAMPP so I had to change it line below
     require('../logs/log.php'); //works again?
 
+    if(!($_SESSION['csrf_token_settings']) || $_SESSION['csrf_token_settings'] != $_POST['csrf_token_settings'] )
+    {
+       add_into_log('error', 'CSRF ERROR - add_link.php');
+       exit('<h1>CSRF TOKEN ERROR</h1>');
+    }
 
 try{
     $sql = "INSERT INTO `rob_footer` (`id_footer`, `is_enabled_footer`, `name_footer`, `link_footer`, `image_footer`) VALUES (NULL, '1', 'LINK', '#', 'img/ico/link.png')";

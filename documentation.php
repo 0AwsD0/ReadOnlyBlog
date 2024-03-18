@@ -51,13 +51,13 @@
                 <nav>
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="admin_panel.php">Admin panel</a>
+                            <a class="nav-link" aria-current="page" href="admin_panel.php">Settings</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="add_post.php">Add Post</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="edit_post">Edit Posts</a>
+                            <a class="nav-link" href="edit_post.php">Edit Posts</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="pages.php">Pages</a>
@@ -69,9 +69,17 @@
                     <a class="nav-link" href="functions/logout.php"><button class="btn btn-danger log_out">Logout</button></a>
                 </nav>
         <main class="main">
+
             <div class="row justify-content-center" style="margin: 0 !important; display: block !important;">
-                214234234
+            <h4>The login and password storing system.</h4>
+                <p>After installing the Read Only Blog you can change your password in </p>
             </div>
+
+            <div class="row justify-content-center" style="margin: 0 !important; display: block !important; border-top: 1px solid #dee2e6;">
+            <h4>Editor</h4>
+                <p>ID: - shows post ID in database</p>
+            </div>
+
         </main>
     </div>
 

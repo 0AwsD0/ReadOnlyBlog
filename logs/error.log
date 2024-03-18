@@ -1,0 +1,5 @@
+12/26/2023 01:44:50 am | Post.php ERROR - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'rrob_post_content.id_post' in 'where clause' | IP - 127.0.0.1
+12/26/2023 02:32:48 am | Post.php ERROR - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '` AND rob_post.visibility_post = "1" ORDER BY rob_post_content.order_post_con...' at line 1 | IP - ::1
+03/18/2024 01:37:57 am | CSRF ERROR - delete_link.php | IP - 127.0.0.1
+03/18/2024 01:56:29 am | CSRF ERROR - delete_post.php | IP - 127.0.0.1
+03/18/2024 01:57:02 am | CSRF ERROR - delete_post.php | IP - 127.0.0.1

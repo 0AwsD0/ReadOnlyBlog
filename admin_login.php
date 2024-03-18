@@ -29,7 +29,7 @@
                     <input type="email" name="email" id="email"><br>
                     <label for="password">Enter admin password:</label><br>
                     <input type="password" name="password" id="password"><br>
-                    <input type="hidden" name="csrf_token" value="<?php echo($csrf_token); ?>">
+                    <input type="hidden" name="csrf_token" value="<?php echo($csrf_token);?>">
                     <input type="submit" class="btn btn-primary" value="Login">
                 </form>
             </div>

@@ -51,7 +51,7 @@
                 <nav>
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="admin_panel.php">Admin panel</a>
+                            <a class="nav-link" aria-current="page" href="admin_panel.php">Settings</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="edit_post.php">Back to edit list</a>

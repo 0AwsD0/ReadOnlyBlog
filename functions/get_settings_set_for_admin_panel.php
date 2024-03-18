@@ -1,4 +1,3 @@
-
 <div class="settings_holder" style="padding: 20px;">
   <form action="functions/settings_update.php" method="post">
 
@@ -68,6 +67,7 @@
     <label for="active_footer_settings">Enable custom links with uploaed or linked icons on websites footer.</label>
 
     <input type="hidden" name="id_settings" value="<?php echo($id_settings); ?>">
+    <input type="hidden" name="csrf_token_settings" value="<?php $csrf_token_settings ?>">
       <br>
       <br>
       <br>
@@ -117,11 +117,13 @@
               <br>
               <br>
                 <input type="hidden" name="id_footer" value="'.$id_footer.'">
+                <input type="hidden" name="csrf_token_settings" value="'.$csrf_token_settings.'">
                 <input type="submit" value="SAVE CHANGES" class="btn btn-primary" style="color: white;">
             </form>
           <br>
             <form action="functions/delete_link.php" method="post">
               <input type="hidden" name="id_footer" value="'.$id_footer.'">
+              <input type="hidden" name="csrf_token_settings" value="'.$csrf_token_settings.'">
               <input type="submit" value="DELETE THIS LINK" class="btn btn-warning" style="color: white;">
             </form>
           <br>
@@ -131,6 +133,7 @@
     echo('
       <form action="functions/add_link.php" method="post">
         <input type="submit" value="ADD NEW LINK" class="btn btn-primary" style="color: white;">
+        <input type="hidden" name="csrf_token_settings" value="'.$csrf_token_settings.'">
       </form>
     ');
 }
@@ -148,6 +151,7 @@ $conn = null;
         <form action="functions/settings_delete.php" method="post">
             <br>
             <input type="hidden" name="id_settings" value="'.$id_settings.'">
+            <input type="hidden" name="csrf_token_settings" value="'.$csrf_token_settings.'">
             <button type="submit" class="btn btn-danger">Delete Settings Set ID '.$id_settings.'</button>
         </form>
       ');

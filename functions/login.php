@@ -17,11 +17,11 @@ try{
 
     $sql = 'SELECT `password_user`,`email_user` FROM `rob_user` WHERE `id_user` = 1';
     foreach ($conn->query($sql) as $row) {
-        $obtained_email = $row['password_user'];
-        $obtained_password = $row['email_user'];
+        $obtained_email = $row['email_user'];
+        $obtained_password = $row['password_user'];
     }
 
-    if(password_verify($email, $obtained_password) && password_verify($passwd, $obtained_email))
+    if(password_verify($email, $obtained_email) && password_verify($passwd, $obtained_password))
     {
         add_into_log('login', 'Login SUCCESS');
         header('Location: ../admin_panel.php');
