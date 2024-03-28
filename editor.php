@@ -5,13 +5,9 @@
         exit('<h1> 405 Method Not Allowed </h1>');
     }
 
-    //echo('Admin panel.');
     if(!($_SESSION['logged_in'] == true)){
         echo('<h1>You are not loged in!</h1><br>');
         exit('<h1>Log in first to access tis page!</h1>');
-    }
-    else{
-        //echo('Session is present!');
     }
 
     require('functions/dbconn.php');
@@ -25,6 +21,9 @@
       echo "Error: " . $e->getMessage();
       $conn = null;
     }
+
+    $csrf_token_editor = bin2hex(random_bytes(20));
+    $_SESSION['csrf_token_editor'] = $csrf_token_editor;
 
 ?>
 <!DOCTYPE html>
@@ -85,7 +84,6 @@
                                 <p style="margin: 20px; margin-left: 0;">Post Title: <input type="text" name="title_post" style="width:" value="'.$row['title_post'].'"></p>
                                 <p style="margin: 15px; margin-left: 0;">Post Introduction: <input type="text" name="introduction_post" style="width:" value="'.$row['introduction_post'].'"></p>
                                 ');
-                                //add Delete post above?
 
                             //Query 2 == get post content
                             $sql = 'SELECT rob_post.id_post, visibility_post, order_post_content, data_type_post_content, content_post_content FROM rob_post_content INNER JOIN rob_post ON rob_post_content.id_post = rob_post.id_post WHERE rob_post_content.id_post = '.$id_post.' ';
@@ -97,6 +95,8 @@
                                 $order_post_content = $row['order_post_content'];
                                 $data_type_post_content = $row['data_type_post_content'];
 
+
+                                //code below is abomination but it works LOL
                                 switch($row['data_type_post_content']){
                                     case 0:
                                             echo('
@@ -120,7 +120,7 @@
                                                 <input type="hidden" name="delete_block_'.$i.'" form="delete-form">
                                             </div>
                                             ');
-                                            //dla delete blockfunkcja w functions
+                                            //dla delete block funkcja w functions
                                         break;
                                     case 1:
                                             echo('
@@ -300,6 +300,7 @@
                         }
 
                     ?>
+                        <input type="hidden" name="csrf_token_editor" value="<?php echo($csrf_token_editor) ?>">
                         <input type="submit" value="Save" class="btn btn-primary" style="margin: 20px;">
                         add checkbox "Delete block" - and if value 1 -> the block of that ID needs to be deleted -logic in edit.php
                      </form>
@@ -318,12 +319,14 @@
                             <option value="8">Image</option>
                         </select>
                         <input type="hidden" name="id_post" value="<?php echo($id_post); ?>">
+                        <input type="hidden" name="csrf_token_editor" value="<?php echo($csrf_token_editor) ?>">
                         <input type="submit" value="Add Block" class="btn btn-primary" style="margin: 20px;">
                     </form>
 
                     <form action="edit_delete_block.php" method="post">
                         <label for="number">ID if the block you want to delete.</input>
                         <input type="number" name="number_to_delete" id="XDddddd">
+                        <input type="hidden" name="csrf_token_editor" value="<?php echo($csrf_token_editor) ?>">
                         <input type="submit" value="Delete Block" class="btn btn-danger" style="margin: 20px;">
                     </form>
                     <i>This is additional method for deleting elements of your post.</i>

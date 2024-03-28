@@ -23,6 +23,7 @@
     }
 
 try{
+    //requires -> ON DELETE CASCADE (same ass for settings -> subpage  //footer and aside are not conected to settings) //before deleted already made fk0 -> ALTER TABLE `rob_post_content` ADD CONSTRAINT `rob_post_content_fk0` FOREIGN KEY (`id_post`) REFERENCES `rob_post`(`id_post`) ON DELETE CASCADE ON UPDATE NO ACTION;
     $id_post = $_GET['id_post'];
     $sql = "DELETE FROM rob_post WHERE id_post = $id_post";
     $query= $conn->prepare($sql);

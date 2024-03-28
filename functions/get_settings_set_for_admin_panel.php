@@ -17,7 +17,7 @@
     <label for="css_settings"> - change css for your website</label>
 
     <h4>Name of the website: </h4><input type="text" name="blog_name_settings" class="blog_name_settings" value="<?php echo($blog_name_settings); ?>" >
-    <label for="blog_name_settings"> - Change name of the website</label>
+    <label for="blog_name_settings"> - change name of the website</label>
 
     <h4>Header possition: <?php echo($header_text_color_settings); ?></h4>
       <fieldset>
@@ -73,79 +73,8 @@
       <br>
       <button type="submit" class="btn btn-primary">Save Settings Set</button>
   </form>
-
-
-
-    <br>
-    <br>
-    <h5>Whitch websites links should be enabled?</h5>
-    <h6>You can paste link or directory path in your server to set custom images for your links.</h6>
-    <h6>This settings are global - no matter witch settings set you use links stay the same.<br> You can disable or enable link by using designated checkbox.</h6>
-    <br>
-<?php
- try{
-  $sql = "SELECT * FROM rob_footer"; //+add in database new table containnig links icons etc. or ad columns to settings table and get them as varibles here to be used inside get_settings_set_for_admin_panel.php
-  foreach ($conn->query($sql) as $row){
-        $id_footer = $row['id_footer'];
-        $name_footer = $row['name_footer'];
-        $link_footer = $row['link_footer'];
-        $image_footer = $row['image_footer'];
-        $is_enabled_footer =$row['is_enabled_footer'];
-
-                  if($is_enabled_footer == 1){
-                      $checked ='checked';
-                      $checkbox_link_state = ' (YES)';
-                  }
-                  else{
-                      $checked ='';
-                      $checkbox_link_state = ' (NO)';
-                  }
-
-        echo('
-            <form action="functions/edit_link.php" method="post">
-                <input type="text" name="name_footer" class="name" value="'.$name_footer.'">
-                <label for="name_footer"> - name of your link</label>
-              <br>
-                <input type="text" name="link_footer" class="link_footer" value="'.$link_footer.'">
-                <label for="link_foote"> - link url</label>
-              <br>
-                <input type="text" name="image_footer" class="image_footer" value="'.$image_footer.'">
-                <label for="image_footer"> - link/path to icon</label>
-              <br>
-                <input type="checkbox" name="is_enabled_footer" value="'.$is_enabled_footer.'"'.$checked.'>
-                <label for="is_enabled_footer"> - Is it enabled? '.$checkbox_link_state.'</label>
-              <br>
-              <br>
-                <input type="hidden" name="id_footer" value="'.$id_footer.'">
-                <input type="hidden" name="csrf_token_settings" value="'.$csrf_token_settings.'">
-                <input type="submit" value="SAVE CHANGES" class="btn btn-primary" style="color: white;">
-            </form>
-          <br>
-            <form action="functions/delete_link.php" method="post">
-              <input type="hidden" name="id_footer" value="'.$id_footer.'">
-              <input type="hidden" name="csrf_token_settings" value="'.$csrf_token_settings.'">
-              <input type="submit" value="DELETE THIS LINK" class="btn btn-warning" style="color: white;">
-            </form>
-          <br>
-          <br>
-        ');
-      }
-    echo('
-      <form action="functions/add_link.php" method="post">
-        <input type="submit" value="ADD NEW LINK" class="btn btn-primary" style="color: white;">
-        <input type="hidden" name="csrf_token_settings" value="'.$csrf_token_settings.'">
-      </form>
-    ');
-}
-catch(Exception $e) {
-echo "Error: " . $e->getMessage();
-add_into_log('error', 'Get settings set ERROR - '.$e->getMessage());
-$conn = null;
-}
-?>
-    <!-- add_link.php below -->
-      <!-- Add in PHP check if the settigns id is 1 than can not delete only one settings set. -->
     <?php
+    //prevents deletion of first settings set so there is at least one
     if($id_settings != 1){
         echo('
         <form action="functions/settings_delete.php" method="post">

@@ -8,7 +8,7 @@
     //require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
     require('logs/log.php');
 try{
-    //INNER JOIN and WHERE part 2 is present not only to show title but also to prevent direct access tohidden posts
+    //INNER JOIN and WHERE part 2 is present not only to show title but also to prevent direct access to hidden posts
     $sql = 'SELECT rob_post_content.content_post_content, rob_post_content.data_type_post_content, rob_post_content.id_post, rob_post_content.order_post_content, rob_post.visibility_post, rob_post.title_post FROM rob_post_content INNER JOIN `rob_post` ON rob_post.id_post = rob_post_content.id_post WHERE rob_post_content.id_post = '.$post_id.' AND rob_post.visibility_post = "1" ORDER BY rob_post_content.order_post_content ASC;';
 
     //$result = $conn->query($sql);

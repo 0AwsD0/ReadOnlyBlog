@@ -3,3 +3,7 @@
 03/18/2024 01:37:57 am | CSRF ERROR - delete_link.php | IP - 127.0.0.1
 03/18/2024 01:56:29 am | CSRF ERROR - delete_post.php | IP - 127.0.0.1
 03/18/2024 01:57:02 am | CSRF ERROR - delete_post.php | IP - 127.0.0.1
+03/28/2024 12:51:29 am | Post deletion ERROR - SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`readonlyblog`.`rob_post_content`, CONSTRAINT `rob_post_content_fk0` FOREIGN KEY (`id_post`) REFERENCES `rob_post` (`id_post`)) | IP - 127.0.0.1
+03/28/2024 12:55:08 am | Post deletion ERROR - SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`readonlyblog`.`rob_post_content`, CONSTRAINT `rob_post_content_fk0` FOREIGN KEY (`id_post`) REFERENCES `rob_post` (`id_post`)) | IP - 127.0.0.1
+03/28/2024 12:55:18 am | Post deletion ERROR - SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`readonlyblog`.`rob_post_content`, CONSTRAINT `rob_post_content_fk0` FOREIGN KEY (`id_post`) REFERENCES `rob_post` (`id_post`)) | IP - 127.0.0.1
+03/28/2024 12:56:05 am | Post deletion ERROR - SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`readonlyblog`.`rob_post_content`, CONSTRAINT `rob_post_content_fk0` FOREIGN KEY (`id_post`) REFERENCES `rob_post` (`id_post`)) | IP - 127.0.0.1
