@@ -7,3 +7,8 @@
 03/28/2024 12:55:08 am | Post deletion ERROR - SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`readonlyblog`.`rob_post_content`, CONSTRAINT `rob_post_content_fk0` FOREIGN KEY (`id_post`) REFERENCES `rob_post` (`id_post`)) | IP - 127.0.0.1
 03/28/2024 12:55:18 am | Post deletion ERROR - SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`readonlyblog`.`rob_post_content`, CONSTRAINT `rob_post_content_fk0` FOREIGN KEY (`id_post`) REFERENCES `rob_post` (`id_post`)) | IP - 127.0.0.1
 03/28/2024 12:56:05 am | Post deletion ERROR - SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`readonlyblog`.`rob_post_content`, CONSTRAINT `rob_post_content_fk0` FOREIGN KEY (`id_post`) REFERENCES `rob_post` (`id_post`)) | IP - 127.0.0.1
+09/04/2024 03:37:59 pm | !!!CRITICAL ERROR!!! in -> Edit.php -> changes not saved! - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''rob_post_content' ('id_post_content', 'id_post', 'order_post_content', 'data...' at line 1 | IP - 127.0.0.1
+15/04/2024 11:46:42 pm | CSRF ERROR - add_settings_set.php | IP - 127.0.0.1
+15/04/2024 11:48:52 pm | CSRF ERROR - settings_delete.php | IP - 127.0.0.1
+15/04/2024 11:51:46 pm | CSRF ERROR - settings_delete.php | IP - 127.0.0.1
+15/04/2024 11:53:07 pm | CSRF ERROR - settings_delete.php | IP - 127.0.0.1

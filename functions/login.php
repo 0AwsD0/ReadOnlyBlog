@@ -1,16 +1,18 @@
 <?php
+
     session_start();
-
-    if(! isset($_SESSION['csrf_token']) || $_SESSION['csrf_token'] != $_POST['csrf_token']){
-        exit('<h1> 405 Method Not Allowed </h1>');
-    }
-
     //require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
     require('../logs/log.php');
 
     $email = $_POST['email'];
     $passwd = $_POST['password'];
     require('dbconn.php');
+
+    if(! isset($_SESSION['csrf_token']) || $_SESSION['csrf_token'] != $_POST['csrf_token']){
+        //you can add INSERT to DB here as a way to track attempt in other way than log file checking
+        $conn = null;
+        exit('<h1> 405 Method Not Allowed </h1>');
+    }
 
 
 try{

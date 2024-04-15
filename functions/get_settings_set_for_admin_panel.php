@@ -67,7 +67,7 @@
     <label for="active_footer_settings">Enable custom links with uploaed or linked icons on websites footer.</label>
 
     <input type="hidden" name="id_settings" value="<?php echo($id_settings); ?>">
-    <input type="hidden" name="csrf_token_settings" value="<?php $csrf_token_settings ?>">
+    <input type="hidden" name="csrf_token_settings" value="<?php echo($csrf_token_settings); ?>">
       <br>
       <br>
       <br>

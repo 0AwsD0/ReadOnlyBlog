@@ -13,10 +13,11 @@
     require('dbconn.php');
     //require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
     require('../logs/log.php');
-
-    if(!($_SESSION['csrf_token_settings']) || $_SESSION['csrf_token_settings'] != $_POST['csrf_token_settings'] )
+    //statement below is placed here and not before -> 'require('dbconn.php')' -> and contains $conn = null; -> to allow creation of insert to database -> DB LOG and automate/allow attack/error detection by reading not only the log file but also records from database <- THIS into DOCUMENTATION    if(!($_SESSION['csrf_token_settings']) || $_SESSION['csrf_token_settings'] != $_POST['csrf_token_settings'] )
+    if( !($_SESSION['csrf_token_settings']) || $_SESSION['csrf_token_settings'] != $_POST['csrf_token_settings'] )
     {
        add_into_log('error', 'CSRF ERROR - settings_delete.php');
+       $conn = null;
        exit('<h1>CSRF TOKEN ERROR</h1>');
     }
 

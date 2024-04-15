@@ -59,7 +59,7 @@
                     <a class="nav-link" href="functions/logout.php"><button class="btn btn-danger log_out">Logout</button></a>
                 </nav>
         <main class="main">
-            <p id="p_help">For tutorial on how to edit and modify your posts click <a href="#"><button class="btn btn-primary">HERE </button></a></p>/\/\/\add link to DOC later
+            <p id="p_help">For tutorial on how to edit and modify your posts click <a href="#"><button class="btn btn-primary">HERE <!-- link.php/#id_of_div_with_H1_Editor --></button></a></p>/\/\/\add link to DOC later
             <div class="row justify-content-center" style="margin: 0 !important; display: block !important;">
                 <div class="col-12">
                 <form id="main-form" class="form_edit" action="functions/edit.php" method="post">
@@ -144,9 +144,10 @@
                                         break;
                                     case 2:
                                             echo('
-                                            <p style="margin: 10px; margin-left: 0;">Order: <input type="number" name="order_post_content_'.$i.'" style="width:" value="'.$row['order_post_content'].'"></p>
-                                            <label for="data_type_post_content_'.$i.'">Data Type:</label>
-                                            <select id="data_type_list_'.$i.'" name="data_type_post_content_'.$i.'">
+                                            <div class="edit_wrap">
+                                              <p style="margin: 10px; margin-left: 0;">Order: <input type="number" name="order_post_content_'.$i.'" style="width:" value="'.$row['order_post_content'].'"></p>
+                                              <label for="data_type_post_content_'.$i.'">Data Type:</label>
+                                              <select id="data_type_list_'.$i.'" name="data_type_post_content_'.$i.'">
                                               <option value="2">H2</option>
                                               <option value="0">Paragraph</option>
                                               <option value="1">H1</option>
@@ -157,11 +158,13 @@
                                               <option value="7">Link</option>
                                               <option value="8">Image</option>
                                             </select>
-                                                <h2>'.$row['content_post_content'].'</h2>
+                                                <h2><br><input class="resizable-input" type="text" name="content_post_content_'.$i.'" style="width: 100%;" value="'.$row['content_post_content'].'" form="main-form"></h2>
+                                            </div>
                                             ');
                                         break;
                                     case 3:
                                             echo('
+                                            <div class="edit_wrap">
                                             <p style="margin: 10px; margin-left: 0;">Order: <input type="number" name="order_post_content_'.$i.'" style="width:" value="'.$row['order_post_content'].'"></p>
                                             <label for="data_type_post_content_'.$i.'">Data Type:</label>
                                             <select id="data_type_list_'.$i.'" name="data_type_post_content_'.$i.'">
@@ -175,11 +178,13 @@
                                               <option value="7">Link</option>
                                               <option value="8">Image</option>
                                             </select>
-                                                <h3>'.$row['content_post_content'].'</h3>
+                                                <h3><br><input class="resizable-input" type="text" name="content_post_content_'.$i.'" style="width: 100%;" value="'.$row['content_post_content'].'" form="main-form"></h3>
+                                                </div>
                                             ');
                                         break;
                                     case 4:
                                             echo('
+                                            <div class="edit_wrap">
                                             <p style="margin: 10px; margin-left: 0;">Order: <input type="number" name="order_post_content_'.$i.'" style="width:" value="'.$row['order_post_content'].'"></p>
                                             <label for="data_type_post_content_'.$i.'">Data Type:</label>
                                             <select id="data_type_list_'.$i.'" name="data_type_post_content_'.$i.'">
@@ -193,11 +198,13 @@
                                               <option value="7">Link</option>
                                               <option value="8">Image</option>
                                             </select>
-                                                <h4>'.$row['content_post_content'].'</h4>
+                                                <h4><br><input class="resizable-input" type="text" name="content_post_content_'.$i.'" style="width: 100%;" value="'.$row['content_post_content'].'" form="main-form"></h4>
+                                                </div>
                                             ');
                                         break;
                                     case 5:
                                             echo('
+                                            <div class="edit_wrap">
                                             <p style="margin: 10px; margin-left: 0;">Order: <input type="number" name="order_post_content_'.$i.'" style="width:" value="'.$row['order_post_content'].'"></p>
                                             <label for="data_type_post_content_'.$i.'">Data Type:</label>
                                             <select id="data_type_list_'.$i.'" name="data_type_post_content_'.$i.'">
@@ -211,11 +218,13 @@
                                               <option value="7">Link</option>
                                               <option value="8">Image</option>
                                             </select>
-                                                <h5>'.$row['content_post_content'].'</h5>
+                                                <h5><br><input class="resizable-input" type="text" name="content_post_content_'.$i.'" style="width: 100%;" value="'.$row['content_post_content'].'" form="main-form"></h5>
+                                                </div>
                                             ');
                                         break;
                                     case 6:
                                             echo('
+                                            <div class="edit_wrap">
                                             <p style="margin: 10px; margin-left: 0;">Order: <input type="number" name="order_post_content_'.$i.'" style="width:" value="'.$row['order_post_content'].'"></p>
                                             <label for="data_type_post_content_'.$i.'">Data Type:</label>
                                             <select id="data_type_list_'.$i.'" name="data_type_post_content_'.$i.'">
@@ -229,11 +238,13 @@
                                               <option value="7">Link</option>
                                               <option value="8">Image</option>
                                             </select>
-                                                <h6>'.$row['content_post_content'].'</h6>
+                                                <h6><br><input class="resizable-input" type="text" name="content_post_content_'.$i.'" style="width: 100%;" value="'.$row['content_post_content'].'" form="main-form"></h6>
+                                                </div>
                                             ');
                                         break;
                                     case 7:
                                             echo('
+                                            <div class="edit_wrap">
                                             <p style="margin: 10px; margin-left: 0;">Order: <input type="number" name="order_post_content_'.$i.'" style="width:" value="'.$row['order_post_content'].'"></p>
                                             <label for="data_type_post_content_'.$i.'">Data Type:</label>
                                             <select id="data_type_list_'.$i.'" name="data_type_post_content_'.$i.'">
@@ -248,10 +259,12 @@
                                               <option value="8">Image</option>
                                             </select>
                                                 <a href="'.$row['content_post_content'].'">'.$row['content_post_content'].'</a>
+                                                </div>
                                             ');
                                         break;
                                     case 8:
                                             echo('
+                                            <div class="edit_wrap">
                                             <p style="margin: 10px; margin-left: 0;">Order: <input type="number" name="order_post_content_'.$i.'" style="width:" value="'.$row['order_post_content'].'"></p>
                                             <label for="data_type_post_content_'.$i.'">Data Type:</label>
                                             <select id="data_type_list_'.$i.'" name="data_type_post_content_'.$i.'">
@@ -266,6 +279,7 @@
                                               <option value="7">Link</option>
                                             </select>
                                                 <img class="post_image" src="'.$row['content_post_content'].'">
+                                                </div>
                                             ');
                                         break;
                                 }
@@ -305,7 +319,7 @@
                         add checkbox "Delete block" - and if value 1 -> the block of that ID needs to be deleted -logic in edit.php
                      </form>
 
-                    <form action="edit_add_block.php" method="post">
+                    <form action="functions/edit_add_block.php" method="post">
                         <label for="add_block_type">Type of block you wanna add:</label>
                         <select id="add_block_type" name="add_block_type">
                             <option value="0">Paragraph</option>
@@ -319,6 +333,7 @@
                             <option value="8">Image</option>
                         </select>
                         <input type="hidden" name="id_post" value="<?php echo($id_post); ?>">
+                        <input type="hidden" name="order" value="<?php echo($i); ?>">
                         <input type="hidden" name="csrf_token_editor" value="<?php echo($csrf_token_editor) ?>">
                         <input type="submit" value="Add Block" class="btn btn-primary" style="margin: 20px;">
                     </form>

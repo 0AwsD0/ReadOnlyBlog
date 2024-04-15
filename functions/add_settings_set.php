@@ -13,9 +13,10 @@
     //require($_SERVER['DOCUMENT_ROOT'].'/logs/log.php');
     require('../logs/log.php');
 
-    if(!($_SESSION['csrf_token_settings']) || $_SESSION['csrf_token_settings'] != $_POST['csrf_token_settings'] )
+    if( !($_SESSION['csrf_token_settings']) || $_SESSION['csrf_token_settings'] != $_POST['csrf_token_settings'] )
     {
        add_into_log('error', 'CSRF ERROR - add_settings_set.php');
+       $conn = null;
        exit('<h1>CSRF TOKEN ERROR</h1>');
     }
 

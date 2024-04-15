@@ -18,6 +18,7 @@
     if(!($_SESSION['csrf_token_settings']) || $_SESSION['csrf_token_settings'] != $_POST['csrf_token_settings'] )
     {
        add_into_log('error', 'CSRF ERROR - delete_link.php');
+       $conn = null;
        exit('<h1>CSRF TOKEN ERROR</h1>');
     }
 

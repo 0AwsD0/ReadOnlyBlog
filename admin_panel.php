@@ -74,7 +74,7 @@
                     <a href="#goto_footer_links"><button class="btn btn-primary" style="margin: 40px 0 0 20px;"><b>Go to -> Footer links</b></button></a>
                     <?php require('functions/admin_panel_main.php'); ?>
                     <form action="functions/add_settings_set.php" method="post" style="padding: 20px; border-top: 1px solid #dee2e6;">
-                        <input type="hidden" name="csrf_token_settings" value="<?php $csrf_token_settings ?>">
+                        <input type="hidden" name="csrf_token_settings" value="<?php echo($csrf_token_settings); ?>">
                         <button type="submit" class="btn btn-primary">Add settings set</button>
                     </form>
                 </main>

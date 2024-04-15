@@ -22,6 +22,8 @@ require('logs/log.php');
       add_into_log('error', 'Admin panel main ERROR - '.$e->getMessage());
       $conn = null;
   }
+
+
 ?>
 
 <!-- OPEN -->

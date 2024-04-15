@@ -19,6 +19,7 @@
     if(!($_SESSION['csrf_token_edit_post']) || $_SESSION['csrf_token_edit_post'] != $_GET['csrf_token_edit_post'] )
     {
     add_into_log('error', 'CSRF ERROR - delete_post.php');
+    $conn = null;
     exit('<h1>CSRF TOKEN ERROR</h1>');
     }
 
