@@ -59,10 +59,11 @@
                     <a class="nav-link" href="functions/logout.php"><button class="btn btn-danger log_out">Logout</button></a>
                 </nav>
         <main class="main">
-            <p id="p_help">For tutorial on how to edit and modify your posts click <a href="#"><button class="btn btn-primary">HERE <!-- link.php/#id_of_div_with_H1_Editor --></button></a></p>/\/\/\add link to DOC later
+            <p id="p_help">For tutorial on how to edit and modify your posts click <a href="documentation.php"><button class="btn btn-primary">HERE</button></a></p>
             <div class="row justify-content-center" style="margin: 0 !important; display: block !important;">
                 <div class="col-12">
                 <form id="main-form" class="form_edit" action="functions/edit.php" method="post">
+                <input type="hidden" name="csrf_token_editor" value="<?php echo($csrf_token_editor) ?>">
                     <?php
 
                         $i = 0; //for proper labeling of data - the method can change and the below code can be replaced with better solution in the future -> possibly JSON to evade multiple records for one post
@@ -70,6 +71,12 @@
                         require('logs/log.php');
 
                         try{
+
+                        if(isset($_GET['edit']) && $_GET['edit'] = 'success'){
+                            echo("<br>");
+                            echo('<h1 style="color:green;">EDIT -> SUCCESS</h1>');
+                            echo("<br>");
+                        }
 
                         if(!isset($_GET['redirected'])  || $_GET['redirected'] != 1){
 
@@ -81,21 +88,23 @@
                                 $introduction_post = $row['introduction_post'];
                             }
                             echo('
+                                <input type="hidden" name="id" value="'.$id_post.'" form="main-form">
                                 <p style="margin: 20px; margin-left: 0;">Post Title: <input type="text" name="title_post" style="width:" value="'.$row['title_post'].'"></p>
                                 <p style="margin: 15px; margin-left: 0;">Post Introduction: <input type="text" name="introduction_post" style="width:" value="'.$row['introduction_post'].'"></p>
                                 ');
 
                             //Query 2 == get post content
-                            $sql = 'SELECT rob_post.id_post, visibility_post, order_post_content, data_type_post_content, content_post_content FROM rob_post_content INNER JOIN rob_post ON rob_post_content.id_post = rob_post.id_post WHERE rob_post_content.id_post = '.$id_post.' ';
+                            $sql = 'SELECT rob_post.id_post, visibility_post, id_post_content, order_post_content, data_type_post_content, content_post_content FROM rob_post_content INNER JOIN rob_post ON rob_post_content.id_post = rob_post.id_post WHERE rob_post_content.id_post = '.$id_post.' ';
 
                             foreach ($conn->query($sql) as $row){
 
                                 $i++;
                                 $visibility_post = $row['visibility_post'];
+                                $id_post_content = $row['id_post_content']; //only shows once -> SQL NEEDS TO BECHECKED
                                 $order_post_content = $row['order_post_content'];
                                 $data_type_post_content = $row['data_type_post_content'];
-
-
+                                echo('$id_post_content --------->>>>>>>> '.$id_post_content);
+                                echo('<input type="hidden" name="id_post_content_'.$i.'" value="'.$id_post_content.'" form="main-form">');
                                 //code below is abomination but it works LOL
                                 switch($row['data_type_post_content']){
                                     case 0:
@@ -314,7 +323,6 @@
                         }
 
                     ?>
-                        <input type="hidden" name="csrf_token_editor" value="<?php echo($csrf_token_editor) ?>">
                         <input type="submit" value="Save" class="btn btn-primary" style="margin: 20px;">
                         add checkbox "Delete block" - and if value 1 -> the block of that ID needs to be deleted -logic in edit.php
                      </form>
